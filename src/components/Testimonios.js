@@ -1,5 +1,5 @@
 import React from 'react';
-import imagenM from '../Images/imagenM.avif'
+import imagenM from '../images/imagenM.avif'
 
 export function Testimonios(){
     return (
