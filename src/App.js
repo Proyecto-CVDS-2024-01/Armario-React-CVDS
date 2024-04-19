@@ -1,5 +1,5 @@
 import React from 'react';
-import Testimonios from './components/Testimonios';
+import {Testimonios} from './components/Testimonios';
 
 
 function App() {
@@ -10,7 +10,6 @@ function App() {
       </div>
     );
   }
-
 
 export default App;
 
