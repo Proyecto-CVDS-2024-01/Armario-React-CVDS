@@ -6,5 +6,5 @@ test("Example 1 renders successfully", () => {
 
     const element = screen.getByText(/first test/i);
 
-    expect(element).toBeInTheDocument();
+    expect(element).toBeDefined();
 });
