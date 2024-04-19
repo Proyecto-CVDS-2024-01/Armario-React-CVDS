@@ -1,9 +1,9 @@
-import React, {useEffect, Component} from 'react';
+import React from 'react';
 
 import "bootstrap/dist/css/bootstrap.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import axios from 'axios'; 
 
 class App extends React.Component {
@@ -154,7 +154,7 @@ class App extends React.Component {
               </div>
             </ModalBody>
             <ModalFooter>
-              {this.state.tipoModal=='insertar'?
+              {this.state.tipoModal==='insertar'?
               <button className='btn btn-success' onClick={()=>this.peticionPost()}>
                 Insertar
               </button>: <button className='btn btn-primary' onClick={()=>this.peticionPut()}>
