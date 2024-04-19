@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import axios from 'axios'; 
+import FirstComponent from './components/FirstComponent';
 
 class App extends React.Component {
   state={
@@ -91,6 +92,7 @@ class App extends React.Component {
     const {form}=this.state;
     return (
       <div className='App'>
+        <FirstComponent/>
         <br />
         <button className='btn btn-success' onClick={()=>{this.setState({form:null, tipoModal:'insertar'}); this.modalInsertar()}}>Agregar</button>
         <br /><br />
