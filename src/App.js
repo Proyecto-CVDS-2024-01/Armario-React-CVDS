@@ -6,7 +6,7 @@ import Top from './components/Top';
 
 function App() {
   return (
-    <>
+    <div>
       <div>
         <Top />
       </div>
@@ -15,7 +15,7 @@ function App() {
         <Testimonios/>
         
       </div>
-    </>
+    </div>
   );
 }
 

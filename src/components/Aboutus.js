@@ -14,4 +14,4 @@ class Aboutus extends React.Component {
   }
 
 export default Aboutus;
-  
+
