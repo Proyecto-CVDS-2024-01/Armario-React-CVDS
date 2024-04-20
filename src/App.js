@@ -1,5 +1,5 @@
 import React from 'react';
-import Testimonios from './components/Testimonios';
+import {Testimonios} from './components/Testimonios';
 import About from './components/About';
 import './App.css'
 import Top from './components/Top';
