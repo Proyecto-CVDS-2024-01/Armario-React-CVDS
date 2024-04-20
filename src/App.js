@@ -1,5 +1,7 @@
 import React from 'react';
 import Testimonios from './components/Testimonios';
+import About from './components/Aboutus';
+import './App.css'
 import Top from './components/Top';
 
 function App() {
@@ -8,8 +10,10 @@ function App() {
       <div>
         <Top />
       </div>
-      <div>
-        <Testimonios />
+      <div className='App'>
+        <About />
+        <Testimonios/>
+        
       </div>
     </>
   );
