@@ -17,7 +17,7 @@ class Top extends React.Component {
       };
       const estiloContenedor = {
         display: 'flex',
-        justifyContent: 'center' // Centra los elementos horizontalmente
+        justifyContent: 'center'
       };
   
       return (
