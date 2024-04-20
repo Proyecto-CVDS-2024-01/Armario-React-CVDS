@@ -2,8 +2,32 @@
   text-align: center;
 }
 
-/* Estilo de about-us*/
+/* Estilo de about*/
 .about-container{
   padding: 100px;
   background-color: #2A7C6F;
 }
+/* Estilo de Top */
+
+.top-titulo {
+  text-align: center;
+  color: #2A7C6F;
+}
+
+.top-linea {
+  width: 50%;
+  margin: 0 auto;
+  border-bottom: 1px solid #2A7C6F;
+  margin-bottom: 20px;
+}
+
+.top-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilo Inicio */
+.button-style {
+  display: flex;
+}
+

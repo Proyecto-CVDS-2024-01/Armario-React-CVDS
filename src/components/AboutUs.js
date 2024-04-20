@@ -1,10 +1,12 @@
 import React from 'react';
 
-export function Inicio(){
+export function AboutUs(){
   return (
     <div className='button-style'>
-      <button>Inicio</button>
+      <button>Sobre Nosotros</button>
     </div>
   );
 };
-export default Inicio;
+
+export default AboutUs;
+  
