@@ -6,16 +6,11 @@ import Top from './components/Top';
 
 function App() {
   return (
-    <>
-      <div>
-        <Top />
-      </div>
-      <div className='App'>
-        <About />
-        <Testimonios/>
-        
-      </div>
-    </>
+    <div className='App'>
+      <Top />
+      <About />
+      <Testimonios />
+    </div>
   );
 }
 
