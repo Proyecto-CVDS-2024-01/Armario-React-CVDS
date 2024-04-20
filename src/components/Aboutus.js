@@ -1,17 +1,12 @@
 import React from 'react';
-class Aboutus extends React.Component {
-    render() {
-      const estiloBotones = {
-        display: 'flex',
-      };
+
+export function AboutUs(){
+  return (
+    <div className='button-style'>
+      <button>Sobre Nosotros</button>
+    </div>
+  );
+};
+
+export default AboutUs;
   
-      return (
-        <div style={estiloBotones}>
-          <button>Sobre Nosotros</button>
-        </div>
-      );
-    }
-  }
-
-export default Aboutus;
-

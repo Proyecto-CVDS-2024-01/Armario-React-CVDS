@@ -1,17 +1,11 @@
 import React from 'react';
-class Contacto extends React.Component {
-    render() {
-      const estiloBotones = {
-        display: 'flex',
-      };
-  
-      return (
-        <div style={estiloBotones}>
+
+export function Contacto(){
+  return (
+        <div className='button-style'>
           <button>Contacto</button>
         </div>
       );
-    }
-  }
-
+  };
 export default Contacto;
   

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = () => {
+export function About(){
   return (
     <div className='about-container'>
       <h1>SOBRE NOSOTROS</h1>

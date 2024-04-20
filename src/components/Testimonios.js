@@ -5,8 +5,10 @@ import imagenM from '../images/imagenM.avif'
 export function Testimonios(){
     return (
         <div className='Testimonio'>
-            <div className='Imagen'>
-                <img src={require('../images/imagenM.avif')} height='90%' width='90%' alt='imagenTestimonio'/>
+            <div width='500px'>
+                <div className='Imagen' width='500px'>
+                    <img src={imagenM} height='50%' width='30%'alt = "Imagen de moda"/>
+                </div>
             </div>
             <div className='Testimonio'>
                 <p className='NombrePersona'>Nombre Persona</p>
@@ -14,5 +16,6 @@ export function Testimonios(){
             </div>
         </div>
     );
-}
+};
 
+export default Testimonios;
