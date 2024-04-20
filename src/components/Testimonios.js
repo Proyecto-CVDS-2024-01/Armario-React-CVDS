@@ -7,7 +7,7 @@ export function Testimonios(){
         <div className='Testimonio'>
             <div width='500px'>
                 <div className='Imagen' width='500px'>
-                    <img src={imagenM} height='50%' width='30%'alt = "Imagen de moda"/>
+                    <img src={imagenM} height='50%' width='30%' alt="Imgen de moda"/>
                 </div>
             </div>
             <div className='Testimonio'>
