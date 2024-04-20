@@ -1,7 +1,7 @@
 import React from 'react';
 import Inicio from './Inicio';
 import Contacto from './Contacto';
-import About from './About';
+import Aboutus from './Aboutus';
 
 class Top extends React.Component {
     render() {
@@ -27,7 +27,7 @@ class Top extends React.Component {
           <div style={estiloContenedor}>
             <Inicio />
             <Contacto />
-            <About />
+            <Aboutus />
           </div>
         </div>
       );
