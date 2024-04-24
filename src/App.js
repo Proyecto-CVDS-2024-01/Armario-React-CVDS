@@ -7,9 +7,15 @@ import Top from './components/Top';
 function App() {
   return (
     <div className='App'>
-      <Top />
-      <About />
-      <Testimonios />
+      <div className='Header'>
+        <Top />
+      </div>
+      <div className='Body'>
+        <About />
+      </div>
+      <div className='Footer'>
+        <Testimonios />
+      </div>
     </div>
   );
 }

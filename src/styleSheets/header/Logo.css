@@ -1,0 +1,10 @@
+.Encabezado{
+    padding: 1em;
+    display: flex;
+}
+.top-titulo{
+    text-align: left;
+}
+.top-container{
+    margin-left: 50px;
+}

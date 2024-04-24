@@ -1,19 +1,18 @@
 import React from 'react';
-import Inicio from './Inicio';
-import Contacto from './Contacto';
-import AboutUs from './AboutUs';
+import Menu from './Menu';
+import '../styleSheets/header/Logo.css';
 
 export function Top(){
   return (
-    <div>
-      <h1 className='top-titulo'>TU ARMARIO VIRTUAL</h1>
-      <div className='top-linea'></div>
-      <div className='top-container'>
-        <Inicio />
-        <Contacto />
-        <AboutUs />
+    <header className='Encabezado'>
+      <div className='Logo'>
+        <h1 className='top-titulo'>TU ARMARIO VIRTUAL</h1>
+
       </div>
-    </div>
+      <div className='top-container'>
+        <Menu />
+      </div>
+    </header>
   );
 }
   

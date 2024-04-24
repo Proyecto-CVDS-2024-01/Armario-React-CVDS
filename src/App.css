@@ -1,33 +1,12 @@
-.App {
+.Body {
+  padding: 10em;
   text-align: center;
+  background-color: antiquewhite;
 }
 
-/* Estilo de about*/
-.about-container{
-  padding: 100px;
-  background-color: #2A7C6F;
-}
-/* Estilo de Top */
-
-.top-titulo {
-  text-align: center;
-  color: #2A7C6F;
-}
-
-.top-linea {
-  width: 50%;
-  margin: 0 auto;
-  border-bottom: 1px solid #2A7C6F;
-  margin-bottom: 20px;
-}
-
-.top-container {
+.Footer {
+  padding: 10em;
   display: flex;
-  justify-content: center;
+  
+  background-color:rgb(101, 71, 129);
 }
-
-/* Estilo Inicio */
-.button-style {
-  display: flex;
-}
-
