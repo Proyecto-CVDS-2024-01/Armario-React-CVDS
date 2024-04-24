@@ -5,12 +5,11 @@ import '../styleSheets/header/Logo.css';
 export function Top(){
   return (
     <header className='Encabezado'>
-      <div className='Logo'>
-        <h1 className='top-titulo'>TU ARMARIO VIRTUAL</h1>
-
-      </div>
       <div className='top-container'>
         <Menu />
+      </div>
+      <div className='Logo'>
+        <h1 className='top-titulo'>TU ARMARIO VIRTUAL</h1>
       </div>
     </header>
   );
