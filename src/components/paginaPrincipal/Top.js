@@ -12,6 +12,8 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
+
 
 function Top() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +40,7 @@ function Top() {
                 Productos
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
+                <DropdownItem tag={Link} to="/producto1">Option 1</DropdownItem>
                 <DropdownItem>Option 2</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

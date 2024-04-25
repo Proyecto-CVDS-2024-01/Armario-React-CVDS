@@ -1,6 +1,6 @@
-import  '../styleSheets/Testimonio.css';
+import  '../../styleSheets/Testimonio.css';
 import React from 'react';
-import imagenM from '../images/imagenM.avif'
+import imagenM from '../../images/imagenM.avif'
 
 export function Testimonios(){
     return (

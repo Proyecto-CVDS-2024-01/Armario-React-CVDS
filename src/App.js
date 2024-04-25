@@ -1,12 +1,15 @@
 import React from 'react';
-import {Testimonios} from './components/Testimonios';
-import About from './components/About';
-import Top from './components/Top';
-import { SliderBox } from './components/SliderBox';
-import './App.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Top from './components/paginaPrincipal/Top';
+import SliderBox from './components/paginaPrincipal/SliderBox';
+import About from './components/paginaPrincipal/About';
+import Testimonios from './components/paginaPrincipal/Testimonios';
+import './App.css';
+import OtraPagina from './components/paginaProducto/OtraPagina';
 
 
-function App() {
+
+function PaginaPrincipal() {
   return (
     <div className='App'>
       <div className='Header'>
@@ -23,6 +26,28 @@ function App() {
       </div>
     </div>
   );
+} 
+function OtraPagina1() {
+  return (
+    <div>
+      <OtraPagina />
+    </div>
+  );
 }
 
+function App() {
+  return (
+    <Router>
+      <div className='App'>
+        <div className='Header'>
+        </div>
+        
+      </div>
+      <Routes>
+        <Route path='/' element={<PaginaPrincipal />} />
+        <Route path='/producto1' element={<OtraPagina1 />} />
+      </Routes>
+    </Router>
+  );
+}
 export default App;
