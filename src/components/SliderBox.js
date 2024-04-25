@@ -1,19 +1,31 @@
-import React from "react";
-import '../styleSheets/ImagesHeader/SliderBox.css';
-import imagenM from '../images/imagenM.avif';
-import modelo from '../images/modelo.avif';
+import React from 'react';
+import {UncontrolledCarousel} from 'reactstrap';
 
-export function SliderBox(){
-    return(
-        <div className='slider-box'>
-            <ul>
-                <li>
-                    <img src={imagenM} alt=''/>
-                </li>
-                <li>
-                    <img src={modelo} alt=''/>
-                </li>
-            </ul>
-        </div>
-    );
-};
+const items = [
+  {
+    src: 'https://picsum.photos/id/123/1200/400',
+    altText: 'Slide 1',
+    caption: 'Slide 1',
+    key: 1,
+  },
+  {
+    src: 'https://picsum.photos/id/456/1200/400',
+    altText: 'Slide 2',
+    caption: 'Slide 2',
+    key: 2,
+  },
+  {
+    src: 'https://picsum.photos/id/678/1200/400',
+    altText: 'Slide 3',
+    caption: 'Slide 3',
+    key: 3,
+  },
+];
+
+export function SliderBox() {
+  return (
+  	<UncontrolledCarousel items={items}/>
+  );
+}
+
+export default SliderBox;

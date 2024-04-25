@@ -1,16 +1,22 @@
 .Encabezado{
-    padding: 1em;
-    display:grid;
-    grid-template-columns: 200px 1fr 1fr 1fr;
     position: fixed;
-    background-color: transparent;
 }
-.top-titulo{
-    margin-top: 15px;
+
+.Logo{
+    background: transparent;
+}
+
+.button-tittle{
     font-size: large;
     text-align: left;
+    background-color: transparent;
 }
+
 .top-container{
     text-align: left;
     margin-left: 25px;
+}
+
+.botones{
+    margin: 25px;
 }
