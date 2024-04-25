@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './Menu';
 import '../styleSheets/header/Logo.css';
+import InicioButton from './buttons/InicioButton';
 
 export function Top(){
   return (
@@ -10,6 +11,9 @@ export function Top(){
       </div>
       <div className='Logo'>
         <h1 className='top-titulo'>TU ARMARIO VIRTUAL</h1>
+      </div>
+      <div className='Logo'>
+        <InicioButton />
       </div>
     </header>
   );

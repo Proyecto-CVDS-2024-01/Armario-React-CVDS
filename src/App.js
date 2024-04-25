@@ -2,7 +2,7 @@ import React from 'react';
 import {Testimonios} from './components/Testimonios';
 import About from './components/About';
 import Top from './components/Top';
-import Slogan from './components/Slogan';
+import { SliderBox } from './components/SliderBox';
 import './App.css'
 
 
@@ -11,7 +11,9 @@ function App() {
     <div className='App'>
       <div className='Header'>
         <Top />
-        <Slogan />
+      </div>
+      <div className='ImagesHeader'>
+        <SliderBox />
       </div>
       <div className='Body'>
         <About />
