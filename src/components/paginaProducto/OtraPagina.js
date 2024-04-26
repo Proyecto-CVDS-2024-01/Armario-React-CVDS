@@ -9,10 +9,10 @@ import About from './Product';
   return (
     <div className="ProductPage">
         <div className='Header'>
-            <Top />
-         </div>
+          <Top />
+        </div>
         <div className='BodyPage'>
-            <About />
+          <About />
         </div>
     </div>
   );
