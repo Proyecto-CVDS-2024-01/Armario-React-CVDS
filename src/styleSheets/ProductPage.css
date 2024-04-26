@@ -1,28 +1,23 @@
 .product-page {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas, cada una con igual tamaño */
-  gap: 20px; /* Espacio entre las imágenes */
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
 }
-
 
 .head-image {
   width: 20%; /* Ancho de las imágenes */
-  grid-column: 1;
 }
 
 .body-image {
   width: 20%; /* Ancho de las imágenes */
-  grid-column: 2;
 }
 
 .legs-image {
   width: 20%; /* Ancho de las imágenes */
-  grid-column: 3;
 }
 
 .shoes-image {
   width: 20%; /* Ancho de las imágenes */
-  grid-column: 4;
 }
 
 .head-image img, .body-image img, .legs-image img, .shoes-image img, .socks-image img {
