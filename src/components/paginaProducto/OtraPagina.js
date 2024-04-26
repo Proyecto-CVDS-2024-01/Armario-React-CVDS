@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styleSheets/ProductPage.css';
-import Top from '../paginaProducto/Top';
+import Top from '../paginaPrincipal/Top';
 import About from './Product';
 
   const ProductPage = () => {
