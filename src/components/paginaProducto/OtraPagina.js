@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../styleSheets/ProductPage.css';
-import { useState } from 'react';
 import Top from '../paginaProducto/Top';
 import About from './Product';
 
