@@ -4,7 +4,7 @@ import imagenM from '../../images/imagenM.avif'
 
 export function Testimonios(){
     return (
-        <div className='Testimonio'>
+        <div className='Testimonio' data-testid = "testimonios-1">
                 <div className='Imagen'>
                     <img src={imagenM} height='40%' width='55%'alt = "Imagen de moda"/>
                 </div>

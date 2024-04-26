@@ -23,12 +23,12 @@ function Top() {
   return (
     <div>
       <Navbar fixed className='Encabezado'>
-        <NavbarBrand href="/">Tu armario virtual</NavbarBrand>
+        <NavbarBrand href="/">Tu armario virtual</NavbarBrand> 
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto">
             <NavItem>
-              <NavLink href="/components/">Inicio</NavLink>
+              <NavLink href="/">Inicio</NavLink> {/* Se cambio la ruta para que el boton de incio redirigiera a la pagina principal (landing page) */}
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">

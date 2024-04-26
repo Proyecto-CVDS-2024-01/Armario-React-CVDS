@@ -28,7 +28,7 @@ function Top() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto">
             <NavItem>
-              <NavLink href="/components/">Inicio</NavLink>
+              <NavLink tag={Link} to="/">Inicio</NavLink> {/* Se cambio la ruta para que el boton de incio redirigiera a la pagina principal (landing page) */}
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">

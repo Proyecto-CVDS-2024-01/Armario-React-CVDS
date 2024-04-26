@@ -5,5 +5,5 @@ test('should render AboutUs component', () => {
     render(<AboutUs/>);
     const aboutElement = screen.getByTestId('aboutus-1');
     expect(aboutElement).toBeInTheDocument();
-    expect(aboutElement).toHaveTextContent('Sobre Nosotros');
+    expect(aboutElement).toHaveTextContent('Una pequeña muestra de nuestra producto');
 })
