@@ -27,6 +27,7 @@ function PaginaPrincipal() {
     </div>
   );
 } 
+
 function OtraPagina1() {
   return (
     <div>

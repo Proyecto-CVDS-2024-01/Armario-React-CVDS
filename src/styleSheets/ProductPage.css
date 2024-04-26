@@ -1,55 +1,83 @@
 .product-page {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .product-image img {
-    width: 100%;
-    max-width: 500px;
-  }
-  
-  .product-details {
-    max-width: 500px;
-  }
-  
-  .product-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .product-price {
-    font-size: 20px;
-    color: #ff0000;
-    margin-bottom: 20px;
-  }
-  
-  .product-description {
-    margin-bottom: 20px;
-  }
-  
-  .product-sizes {
-    margin-bottom: 20px;
-  }
-  
-  .size-button {
-    margin-right: 10px;
-    border: none;
-    background-color: #f0f0f0;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .size-button.selected {
-    background-color: #0000ff;
-    color: #ffffff;
-  }
-  
-  .add-to-cart-button {
-    background-color: #0000ff;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas, cada una con igual tamaño */
+  gap: 20px; /* Espacio entre las imágenes */
+}
+
+
+.head-image {
+  width: 20%; /* Ancho de las imágenes */
+  grid-column: 1;
+}
+
+.body-image {
+  width: 20%; /* Ancho de las imágenes */
+  grid-column: 2;
+}
+
+.legs-image {
+  width: 20%; /* Ancho de las imágenes */
+  grid-column: 3;
+}
+
+.shoes-image {
+  width: 20%; /* Ancho de las imágenes */
+  grid-column: 4;
+}
+
+.head-image img, .body-image img, .legs-image img, .shoes-image img, .socks-image img {
+  width: 100%;
+  max-width: 100%; /* Tamaño máximo de las imágenes */
+}
+
+.product-details {
+  max-width: 50%; /* Ancho máximo de los detalles del producto */
+}
+
+.product-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 20px;
+  color: #ff0000;
+  margin-bottom: 20px;
+}
+
+.product-description {
+  margin-bottom: 20px;
+}
+
+.product-sizes {
+  margin-bottom: 20px;
+}
+
+.size-button {
+  margin-right: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.size-button.selected {
+  background-color: #0000ff;
+  color: #ffffff;
+}
+
+.add-to-cart-button {
+  background-color: #0000ff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.BodyPage {
+  margin: 0 auto; /* Centrar el panel */
+  width: 50%; /* Ancho del panel */
+  padding: 3em; /* Ajustar el espacio interno del panel */
+  text-align: center;
+  background-color: antiquewhite;
+}
