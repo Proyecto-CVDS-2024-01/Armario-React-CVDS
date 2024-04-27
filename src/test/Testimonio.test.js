@@ -1,9 +1,9 @@
 import {render, screen} from '@testing-library/react'
-import MuestraProducto from '../components/paginaPrincipal/MuestraProducto'
+import Testimonio from '../components/paginaPrincipal/Testimonios'
 import '@testing-library/jest-dom'
 test('should render Testimonio component', () => { 
-    render(<MuestraProducto/>);
-    const MuestraProductoElement = screen.getByTestId('testimonios-1');
-    expect(MuestraProductoElement).toBeInTheDocument();
-    //expect(testimonioElement).toHaveTextContent('testimonio');
+    render(<Testimonio/>);
+    const testimonioElement = screen.getByTestId('testimonios-1');
+    expect(testimonioElement).toBeInTheDocument();
+    expect(testimonioElement).toHaveTextContent('Juan García');
 })

@@ -9,7 +9,7 @@ import '../../styleSheets/ProductPage.css'
 
 export function Product() {
   return (
-    <div>
+    <div data-testid="product-1">
       <h1>¿Con qué estilo quieres destacar hoy?</h1>
       <div className="clothing-container"> 
         <Accessories />

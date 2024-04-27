@@ -6,7 +6,7 @@ import Product from './Product';
   const ProductPage = () => {
     
   return (
-    <div className="ProductPage">
+    <div className="ProductPage" data-testid="otrapagina-1">
         <div className='Header'>
           <Top />
         </div>
