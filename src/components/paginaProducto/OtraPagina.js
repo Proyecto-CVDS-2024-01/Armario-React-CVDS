@@ -4,8 +4,7 @@ import Top from '../paginaPrincipal/Top';
 import Product from './Product';
 
   const ProductPage = () => {
-
-
+    
   return (
     <div className="ProductPage">
         <div className='Header'>

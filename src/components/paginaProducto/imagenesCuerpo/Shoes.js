@@ -1,10 +1,12 @@
 import React from 'react'
-import shoes from '../../../images/productPage/shoes.avif'
+import shoes from '../../../images/productPage/shoes.png'
+import '../../../styleSheets/ProductPage.css'
 
 const Shoes = () => {
   return (
-    <div>
-        <img src ={shoes} alt="imagen de sneakers"/>    
+    <div className='clothing-box-2'>
+        <h1>Shoes</h1>
+        <img className="img" src ={shoes} alt="imagen de sneakers"/>    
     </div>
   )
 }

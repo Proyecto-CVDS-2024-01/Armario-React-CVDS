@@ -1,9 +1,11 @@
 import React from 'react'
-
+import '../../../styleSheets/ProductPage.css'
+import jacket from  '../../../images/productPage/jacket.png'
 const Jackets = () => {
   return (
     <div className='clothing-box-2'>
-        Jackets
+      <h1>Jackets</h1>
+      <img className="img" src ={jacket} alt="imagen de una chaqueta"/>    
     </div>
   )
 }
