@@ -2,7 +2,7 @@ import React from 'react'
 
 const Jackets = () => {
   return (
-    <div className='clothing-box'>
+    <div className='clothing-box-2'>
         Jackets
     </div>
   )
