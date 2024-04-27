@@ -6,9 +6,10 @@ import About from './components/paginaPrincipal/About';
 import Testimonios from './components/paginaPrincipal/Testimonios';
 import './App.css';
 import OtraPagina from './components/paginaProducto/OtraPagina';
-
-
-
+import PaginaCamisas from './components/paginaProducto2/paginaCamisas';
+import PaginaChaquetas from './components/paginaProducto2/paginaChaquetas';
+import PaginaPantalones from './components/paginaProducto2/paginaPantalones';
+import PaginaZapatos from './components/paginaProducto2/paginaZapatos';
 function PaginaPrincipal() {
   return (
     <div className='App'>
@@ -28,12 +29,57 @@ function PaginaPrincipal() {
   );
 } 
 
-function OtraPagina1() {
+function PaginaProducto() {
   return (
     <div>
       <OtraPagina />
     </div>
   );
+}
+
+function PaginaProducto2Camisas() {
+  return (
+        <div>
+          <Top />
+          <div className='Body'>
+            <PaginaCamisas/>
+          </div>
+        </div>
+  )
+}
+
+function PaginaProducto2Chaquetas() {
+  return (
+    <div>
+      <Top />
+      <div className='Body'>
+        <PaginaChaquetas />
+      </div>
+    </div>
+  )
+}
+
+function PaginaProducto2Pantalones() {
+  return (
+    <div>
+      <Top />
+      <div className='Body'>
+        <PaginaPantalones />
+      </div>
+    </div>
+  )
+}
+
+
+function PaginaProducto2Zapatos() {
+  return (
+    <div>
+      <Top />
+      <div className='Body'>
+        <PaginaZapatos />
+      </div>
+    </div>
+  )
 }
 
 function App() {
@@ -46,7 +92,11 @@ function App() {
       </div>
       <Routes>
         <Route path='/' element={<PaginaPrincipal />} />
-        <Route path='/producto1' element={<OtraPagina1 />} />
+        <Route path='/producto1' element={<PaginaProducto />} />
+        <Route path='/camisas' element={<PaginaProducto2Camisas />} />
+        <Route path='/chaquetas' element={<PaginaProducto2Chaquetas />} />
+        <Route path='/pantalones' element={<PaginaProducto2Pantalones />} />
+        <Route path='/zapatos' element={<PaginaProducto2Zapatos />} />	
       </Routes>
     </Router>
   );
