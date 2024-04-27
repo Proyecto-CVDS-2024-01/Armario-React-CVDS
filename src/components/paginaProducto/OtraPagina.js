@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styleSheets/ProductPage.css';
 import Top from '../paginaProducto/Top';
-import About from './Product';
+import Product from './Product';
 
   const ProductPage = () => {
 
@@ -12,7 +12,7 @@ import About from './Product';
             <Top />
          </div>
         <div className='BodyPage'>
-            <About />
+            <Product />
         </div>
     </div>
   );

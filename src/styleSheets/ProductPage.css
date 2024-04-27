@@ -1,6 +1,19 @@
-.title {
-  
+.clothing.container{
+  display: flex;
+  flex-direction: column-reverse;
 }
+.clothing-box-1{
+  width: 40%;
+  background-color: #999E67;
+  font-size:2
+}
+.clothing-box-2{
+  width: 40%;
+  background-color: #A17F7A;
+  font-size: 1vw;
+}
+
+
 
 .product-page {
   display: grid;
