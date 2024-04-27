@@ -38,7 +38,7 @@ function Top() {
                     <NavLink href="/">Inicio</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="https://github.com/reactstrap/reactstrap">
+                    <NavLink href="sobreNosotros">
                       Sobre Nosotros
                     </NavLink>
                   </NavItem>
