@@ -35,7 +35,7 @@ function Top() {
               <Collapse isOpen={isOpen} navbar>
                 <Nav className="me-auto" justified card>
                   <NavItem>
-                    <NavLink href="/components/">Inicio</NavLink>
+                    <NavLink href="/">Inicio</NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink href="https://github.com/reactstrap/reactstrap">
