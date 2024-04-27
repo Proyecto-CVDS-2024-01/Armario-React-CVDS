@@ -10,7 +10,10 @@ export function Testimonios(){
                 </div>
             <div className='Contenedor-texto'>
                 <p className='NombrePersona'>Nombre Persona</p>
-                <p className='TextoTestimonio'>Descripción testimonio</p>
+                <p className='TextoTestimonio'>
+¡Claro!
+
+"¡Finalmente encontré la solución perfecta para mis dilemas diarios de qué ponerme! Con esta aplicación de armario virtual, puedo organizar toda mi ropa de manera fácil y rápida. Ya no paso horas frente al armario tratando de decidir qué usar. Ahora, con solo unos pocos toques en mi teléfono, puedo ver todas mis opciones de ropa y armar el look perfecto en minutos. ¡Es como tener un estilista personal en mi bolsillo! ¡Gracias por simplificar mi vida diaria y hacer que vestirme sea divertido de nuevo!"</p>
             </div>
         </div>
         
