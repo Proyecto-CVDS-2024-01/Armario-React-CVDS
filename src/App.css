@@ -6,11 +6,11 @@
 .Body {
   padding: 10em;
   text-align: center;
-  background-color: #d6a584;
+  background-color: antiquewhite;
 }
 
 .Footer {
   padding: 10em;
   display: flex;
-  background-color:rgb(101, 71, 129);
+  background-color:rgb(255, 255, 255);
 }
