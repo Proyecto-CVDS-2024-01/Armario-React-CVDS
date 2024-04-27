@@ -29,7 +29,7 @@ function PaginaPrincipal() {
       <div className='Footer'>
         <Testimonios />
       </div>
-      <div className='Body'>
+      <div className='Bottom'>
         <Prueba />
       </div>
     </div>
