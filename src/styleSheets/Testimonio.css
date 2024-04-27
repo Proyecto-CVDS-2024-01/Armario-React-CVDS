@@ -1,17 +1,25 @@
 .Testimonio{
     width: 1170px;
     height: 368px;
-    margin: 0px 0px 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1px;
     align-items: center;
-    justify-content: center;
     background-color: #c68a40;
-    box-shadow: 0 3px 13px 1px rgb(0 0 0 /9%);
+    user-select: none;
 }
 
-.TextoTestimonio {
-    padding: 10px;
-    margin: 0;
-  }
-  
+.Contenedor-texto{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.Nombre-Persona{
+    font-size: 20px;
+    font-style: oblique;
+}
+.Texto-Testimonio {
+    margin: 0;   
+}
+    

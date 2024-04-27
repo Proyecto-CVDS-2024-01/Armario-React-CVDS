@@ -108,15 +108,17 @@ function App() {
         </div>
         
       </div>
-      <Routes>
-        <Route path='/' element={<PaginaPrincipal />} />
-        <Route path='/producto1' element={<PaginaProducto />} />
-        <Route path='/camisas' element={<PaginaProducto2Camisas />} />
-        <Route path='/chaquetas' element={<PaginaProducto2Chaquetas />} />
-        <Route path='/pantalones' element={<PaginaProducto2Pantalones />} />
-        <Route path='/zapatos' element={<PaginaProducto2Zapatos />} />
-        <Route path='/sobreNosotros' element={<SobreNosotrosPag />} />	
-      </Routes>
+      <switch>
+        <Routes>
+          <Route path='/' element={<PaginaPrincipal />} />
+          <Route path='/producto1' element={<PaginaProducto/>} />
+          <Route path='/camisas' element={<PaginaProducto2Camisas />} />
+          <Route path='/chaquetas' element={<PaginaProducto2Chaquetas />} />
+          <Route path='/pantalones' element={<PaginaProducto2Pantalones />} />
+          <Route path='/zapatos' element={<PaginaProducto2Zapatos />} />
+          <Route path='/sobreNosotros' element={<SobreNosotrosPag />} />	
+        </Routes>
+      </switch>
     </Router>
   );
 }
