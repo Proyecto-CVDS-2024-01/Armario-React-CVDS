@@ -11,6 +11,9 @@ import PaginaCamisas from './components/paginaProducto2/paginaCamisas';
 import PaginaChaquetas from './components/paginaProducto2/paginaChaquetas';
 import PaginaPantalones from './components/paginaProducto2/paginaPantalones';
 import PaginaZapatos from './components/paginaProducto2/paginaZapatos';
+import SobreNosotros from './components/SobreNosotros/SobreNosotros';
+
+
 function PaginaPrincipal() {
   return (
     <div className='App'>
@@ -86,6 +89,17 @@ function PaginaProducto2Zapatos() {
   )
 }
 
+
+function SobreNosotrosPag() {
+  return (
+    <div>
+      <top />
+      <div className='Body'>
+        <SobreNosotros />
+      </div>
+    </div>
+  );
+}
 function App() {
   return (
     <Router>
@@ -100,7 +114,8 @@ function App() {
         <Route path='/camisas' element={<PaginaProducto2Camisas />} />
         <Route path='/chaquetas' element={<PaginaProducto2Chaquetas />} />
         <Route path='/pantalones' element={<PaginaProducto2Pantalones />} />
-        <Route path='/zapatos' element={<PaginaProducto2Zapatos />} />	
+        <Route path='/zapatos' element={<PaginaProducto2Zapatos />} />
+        <Route path='/sobreNosotros' element={<SobreNosotrosPag />} />	
       </Routes>
     </Router>
   );

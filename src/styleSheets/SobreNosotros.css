@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.sobre-nosotros {
+    background-image: url('https://picsum.photos/seed/picsum/1920/1080');
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 15px;
+}
+
+.sobre-nosotros .content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    animation: fadeIn 2s;
+}
+
+.sobre-nosotros h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.sobre-nosotros p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.sobre-nosotros button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff6347;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sobre-nosotros button:hover {
+    background: #ff4500;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
