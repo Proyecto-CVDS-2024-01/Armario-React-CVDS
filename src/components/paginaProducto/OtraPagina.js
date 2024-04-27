@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styleSheets/ProductPage.css';
-import Top from '../paginaProducto/Top';
+import Top from '../paginaPrincipal/Top';
 import Product from './Product';
 
   const ProductPage = () => {
@@ -9,10 +9,10 @@ import Product from './Product';
   return (
     <div className="ProductPage">
         <div className='Header'>
-            <Top />
-         </div>
+          <Top />
+        </div>
         <div className='BodyPage'>
-            <Product />
+          <Product />
         </div>
     </div>
   );
