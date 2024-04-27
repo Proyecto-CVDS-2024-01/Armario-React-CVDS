@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Top from './components/paginaPrincipal/Top';
 import SliderBox from './components/paginaPrincipal/SliderBox';
 import About from './components/paginaPrincipal/About';
+import Prueba from './components/paginaPrincipal/Prueba';
 import Testimonios from './components/paginaPrincipal/Testimonios';
 import './App.css';
 import OtraPagina from './components/paginaProducto/OtraPagina';
@@ -24,6 +25,9 @@ function PaginaPrincipal() {
       </div>
       <div className='Footer'>
         <Testimonios />
+      </div>
+      <div className='Body'>
+        <Prueba />
       </div>
     </div>
   );
