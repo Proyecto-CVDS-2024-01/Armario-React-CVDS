@@ -4,8 +4,12 @@ import {
 	ModalHeader,
 	ModalBody,
 	ModalFooter,
-  Button
+  Button,
+  InputGroup,
+  InputGroupText,
+  Input
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 export function LogIn(){
   const [modal, setModal] = useState(false);
@@ -19,11 +23,20 @@ export function LogIn(){
       <Modal isOpen={modal} toggle={toggle} centered backdrop={false} size='sm'>
         <ModalHeader toggle={toggle}>Inicio Sesion</ModalHeader>
         <ModalBody>
+          <InputGroup>
+            <InputGroupText>@</InputGroupText>
+            <Input placeholder="username" />
+          </InputGroup>
+          <br/>
+          <InputGroup>
+            <InputGroupText>Password</InputGroupText>
+            <Input placeholder="password" />
+          </InputGroup>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>
-            Aceptar
-          </Button>{' '}
+            <Button color="primary" tag={Link} to='/perfil'>
+              Aceptar
+            </Button>
           <Button color="secondary" onClick={toggle}>
             Cancelar
           </Button>

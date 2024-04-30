@@ -8,7 +8,7 @@ const products = [
   { id: 4, name: 'Chaqueta 4',  image: 'https://static.zara.net/assets/public/3f6d/7c48/229d4d6897ce/7f6178faa024/08574456614-a1/08574456614-a1.jpg?ts=1710849251955&w=352' },
 ];
 
-function App() {
+function paginaChaquetas() {
   return (
     <div className="product-grid">
       {products.map(product => (
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default paginaChaquetas;

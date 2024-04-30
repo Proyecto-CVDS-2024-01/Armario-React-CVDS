@@ -12,6 +12,7 @@ import PaginaChaquetas from './components/paginaProducto2/paginaChaquetas';
 import PaginaPantalones from './components/paginaProducto2/paginaPantalones';
 import PaginaZapatos from './components/paginaProducto2/paginaZapatos';
 import SobreNosotros from './components/SobreNosotros/SobreNosotros';
+import Perfil from './components/paginaProducto/Perfil';
 
 
 function PaginaPrincipal() {
@@ -36,85 +37,18 @@ function PaginaPrincipal() {
   );
 } 
 
-function PaginaProducto() {
-  return (
-    <div>
-      <OtraPagina />
-    </div>
-  );
-}
-
-function PaginaProducto2Camisas() {
-  return (
-        <div>
-          <Top />
-          <div className='Body'>
-            <PaginaCamisas/>
-          </div>
-        </div>
-  )
-}
-
-function PaginaProducto2Chaquetas() {
-  return (
-    <div>
-      <Top />
-      <div className='Body'>
-        <PaginaChaquetas />
-      </div>
-    </div>
-  )
-}
-
-function PaginaProducto2Pantalones() {
-  return (
-    <div>
-      <Top />
-      <div className='Body'>
-        <PaginaPantalones />
-      </div>
-    </div>
-  )
-}
-
-
-function PaginaProducto2Zapatos() {
-  return (
-    <div>
-      <Top />
-      <div className='Body'>
-        <PaginaZapatos />
-      </div>
-    </div>
-  )
-}
-
-
-function SobreNosotrosPag() {
-  return (
-    <div>
-      <top />
-      <div className='Body'>
-        <SobreNosotros />
-      </div>
-    </div>
-  );
-}
 function App() {
   return (
     <Router>
-      <div className='App'>
-        <div className='Header'>
-        </div>
-      </div>
       <Routes>
         <Route path='/' element={<PaginaPrincipal />} />
-        <Route path='/producto1' element={<PaginaProducto/>} />
-        <Route path='/camisas' element={<PaginaProducto2Camisas />} />
-        <Route path='/chaquetas' element={<PaginaProducto2Chaquetas />} />
-        <Route path='/pantalones' element={<PaginaProducto2Pantalones />} />
-        <Route path='/zapatos' element={<PaginaProducto2Zapatos />} />
-        <Route path='/sobreNosotros' element={<SobreNosotrosPag />} />	
+        <Route path='/producto1' element={<OtraPagina />} />
+        <Route path='/camisas' element={<PaginaCamisas />} />
+        <Route path='/chaquetas' element={<PaginaChaquetas />} />
+        <Route path='/pantalones' element={<PaginaPantalones />} />
+        <Route path='/zapatos' element={<PaginaZapatos />} />
+        <Route path='/sobreNosotros' element={<SobreNosotros />} />	
+        <Route path='/perfil' element={<Perfil />} />
       </Routes>
     </Router>
   );
