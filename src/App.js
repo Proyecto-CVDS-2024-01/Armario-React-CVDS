@@ -33,6 +33,9 @@ function PaginaPrincipal() {
       <div className='Bottom'>
         <Prueba />
       </div>
+      <div className='Prueba'>
+        <Perfil />
+      </div>
     </div>
   );
 } 
