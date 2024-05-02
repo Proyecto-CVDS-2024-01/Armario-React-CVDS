@@ -52,8 +52,10 @@ function App() {
         <Route path='/zapatos' element={<PaginaZapatos />} />
         <Route path='/sobreNosotros' element={<SobreNosotros />} />	
         <Route path='/perfil' element={<Perfil />} />
+        
       </Routes>
     </Router>
+    
   );
 }
 export default App;

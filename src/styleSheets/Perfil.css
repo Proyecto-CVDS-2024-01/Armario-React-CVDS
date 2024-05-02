@@ -1,21 +1,81 @@
-.Screen{
+.app {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+  
+  .main-image {
+    flex: 1;
+  }
+  
+  .main-image img {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .products {
+    flex: 1;
     display: grid;
-    height: 90vh;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-}
-
-
-.Left-pane {
-    grid-column: 1;
-    grid-row: 1;
-    background-color: rgb(153, 122, 64);
-    }
-
-.Right-pane {
-    grid-column: 2;
-    grid-row: 1;
-    background-color: red;
-    }
-
-
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .product {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .product:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .product img:hover {
+    transform: scale(1.05);
+  }
+  
+  .product h2 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .product p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .product button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product button:hover {
+    background-color: #333;
+  }
+  
