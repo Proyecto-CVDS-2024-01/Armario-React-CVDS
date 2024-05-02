@@ -47,18 +47,18 @@ function Top() {
                       Productos
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem tag={Link} to="/producto1">Opcion 1 tienda</DropdownItem>
-                      <UncontrolledDropdown nav inNavbar>
-                        <DropdownToggle nav caret>
-                          La segunda tienda por ahora
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                          <DropdownItem tag={Link} to="/camisas">camisas</DropdownItem>
-                          <DropdownItem tag={Link} to="/chaquetas">chaquetas</DropdownItem>
-                          <DropdownItem tag={Link} to="/pantalones">pantalones</DropdownItem>
-                          <DropdownItem tag={Link} to="/zapatos">zapatos</DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                      <DropdownItem tag={Link} to="/producto1">Armario Virtual</DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                  <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                      opciones ropa armario virtual
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem tag={Link} to="/camisas">camisas</DropdownItem>
+                      <DropdownItem tag={Link} to="/chaquetas">chaquetas</DropdownItem>
+                      <DropdownItem tag={Link} to="/pantalones">pantalones</DropdownItem>
+                      <DropdownItem tag={Link} to="/zapatos">zapatos</DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </Nav>

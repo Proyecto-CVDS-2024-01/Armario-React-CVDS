@@ -24,7 +24,7 @@ export function LogIn(){
         <ModalHeader toggle={toggle}>Inicio Sesion</ModalHeader>
         <ModalBody>
           <InputGroup>
-            <InputGroupText>@</InputGroupText>
+            <InputGroupText>username</InputGroupText>
             <Input placeholder="username" />
           </InputGroup>
           <br/>
