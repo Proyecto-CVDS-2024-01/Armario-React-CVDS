@@ -2,13 +2,37 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: 'WC Mano Negra Bold';
+  src: url('../styleSheets/Fuentes/WCManoNegraBoldBta.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lava Pro Grunge';
+  src: url('../styleSheets/Fuentes/3rdMan.ttf') format('truetype');
+}
+
+.letra-conjuntos1 {
+  font-family: 'WC Mano Negra Bold', sans-serif;
+  font-size: 34px;
+  font-weight: bold;
+  color: #929FA9; /* Color de la fuente */
+}
+
+.letra-conjuntos2 {
+  font-family: 'Lava Pro Grunge', sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #929FA9; /* Color de la fuente */
+}
+
 .clean-container{
   user-select:none;
   width: 20%;
   font-size:2em;
   border-radius: 12px;
   padding: 12px;
-  margin: 20px;
+  margin: 10px;
 }
 
 .clothing-container{
