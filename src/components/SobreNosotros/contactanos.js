@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../../App.css';
+import Top from '../paginaPrincipal/Top';
 import '../../styleSheets/contactanos.css';
-function App() {
+function Contactanos() {
   const [form, setForm] = useState({
     nombre: '',
     apellido: '',
@@ -9,6 +9,8 @@ function App() {
     origen: '',
     mensaje: ''
   });
+
+
 
   const handleChange = e => {
     setForm({
@@ -24,7 +26,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="Contactanos">
       <form onSubmit={handleSubmit}>
         <input type="text" name="nombre" placeholder="Nombre" onChange={handleChange} required />
         <input type="text" name="apellido" placeholder="Apellido" onChange={handleChange} required />
@@ -37,4 +39,13 @@ function App() {
   );
 }
 
-export default App;
+function PaginaContactanos() {
+  return (
+    <div className="PaginaContactanos">
+      <Top />
+      <Contactanos />
+    </div>
+  );
+}
+
+export default PaginaContactanos;

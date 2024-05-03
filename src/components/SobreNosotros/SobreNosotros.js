@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styleSheets/SobreNosotros.css';
-import { Router, Routes, Route } from 'react-router-dom';
+
+import Taop from '../paginaPrincipal/Top';
  // Import the Contactanos component
 
 const SobreNosotros = () => {
@@ -18,4 +19,13 @@ const SobreNosotros = () => {
     );
 }
 
-export default SobreNosotros;
+function PaginaSobreNosotros () {
+    return (
+        <div className='PaginaSobreNosotros'>
+            <Taop />
+            <SobreNosotros />
+        </div>
+    ); // Remove the extra comma here
+}
+
+export default PaginaSobreNosotros;

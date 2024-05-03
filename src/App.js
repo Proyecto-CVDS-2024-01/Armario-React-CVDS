@@ -13,7 +13,7 @@ import PaginaPantalones from './components/paginaProducto2/paginaPantalones';
 import PaginaZapatos from './components/paginaProducto2/paginaZapatos';
 import SobreNosotros from './components/SobreNosotros/SobreNosotros';
 import Perfil from './components/paginaProducto/Perfil';
-
+import Contactanos from './components/SobreNosotros/contactanos';
 
 function PaginaPrincipal() {
   return (
@@ -52,7 +52,7 @@ function App() {
         <Route path='/zapatos' element={<PaginaZapatos />} />
         <Route path='/sobreNosotros' element={<SobreNosotros />} />	
         <Route path='/perfil' element={<Perfil />} />
-        
+        <Route path='/contactanos' element={<Contactanos />} />
       </Routes>
     </Router>
     

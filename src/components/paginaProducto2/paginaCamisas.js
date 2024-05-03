@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../styleSheets/menuProductos.css";
-
+import Top from '../paginaPrincipal/Top';
 const products = [
   { id: 1, name: 'Camisa 1', image: 'https://static.zara.net/assets/public/0b02/6670/78ea44a48f82/13d7e58e2ada/07545425250-a1/07545425250-a1.jpg?ts=1713972230787&w=352' },
   { id: 2, name: 'Camisa 2', image: 'https://static.zara.net/assets/public/25fa/6f51/0f8e4c99b09a/d03e3579a738/07545373403-a2/07545373403-a2.jpg?ts=1713361382981&w=352' },
@@ -8,7 +8,7 @@ const products = [
   { id: 4, name: 'Camisa 4',  image: 'https://static.zara.net/assets/public/08b4/bd2c/76c74b9fb8d3/5724cdca65c5/03991403712-a1/03991403712-a1.jpg?ts=1711024246741&w=587' },
 ];
 
-function App() {
+const Camisas = () => {
   return (
     <div className="product-grid">
       {products.map(product => (
@@ -22,4 +22,14 @@ function App() {
   );
 }
 
-export default App;
+function PaginaCamisas() {
+  return (
+    <div className="PaginaCamisas">
+      <Top />
+      <Camisas />
+    </div>
+  );
+    
+}
+
+export default PaginaCamisas;
