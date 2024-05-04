@@ -4,7 +4,6 @@ import { Offcanvas, OffcanvasBody,
 import { useState } from 'react';
 import '../../styleSheets/Perfil.css';
 
-
 function Perfil(){ 
 	const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
