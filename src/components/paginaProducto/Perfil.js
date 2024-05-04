@@ -4,7 +4,6 @@ import { Offcanvas, OffcanvasBody,
 import { useState } from 'react';
 import '../../styleSheets/Perfil.css';
 
-
 function Perfil(){ 
 	const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -26,15 +25,13 @@ function Perfil(){
 									</OffcanvasBody>
 								</Offcanvas>
 					</Navbar>
-    <div className='Screen'>
-    	<div className='Left-pane'>
-        <p>Hoal</p>
-    	</div>
-			<div className='Right-pane'>
-			</div>
-			<div>
-			</div>
-	  </div>
+    	<div className='Screen'>
+    		<div className='Left-pane'>
+        	<p>Hoal</p>
+    		</div>
+				<div className='Right-pane'>
+				</div>
+	  	</div>
 		</div>
     );
   };
