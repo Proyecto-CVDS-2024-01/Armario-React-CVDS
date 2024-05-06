@@ -54,11 +54,8 @@ function Perfil(){
 		name : 'BOWLING NYLON',
 		imageUrl : 'https://static.zara.net/assets/public/1018/da36/8da34bcba1e4/fa0b2965bde4/13100320400-e1/13100320400-e1.jpg?ts=1704904458287&w=275'
 	  }
-		// Añade aquí los productos de la sección 1
 	  ]
 	},
-	
-	// Añade más secciones según lo necesites
   ];
 
   const Product = ({ product }) => (
@@ -95,7 +92,7 @@ return (
 				</OffcanvasHeader>
 				<OffcanvasBody>
 					<strong>
-						This is the Offcanvas body.
+						Perfil de usuario
 					</strong>
 				</OffcanvasBody>
 			</Offcanvas>
