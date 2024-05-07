@@ -22,7 +22,7 @@ export function LogIn(){
   const toggle = () => setModal(!modal);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [respuesta, setRespuesta] = useState(false);
+  //const [respuesta, setRespuesta] = useState(false);
 
   return (
     <div>
