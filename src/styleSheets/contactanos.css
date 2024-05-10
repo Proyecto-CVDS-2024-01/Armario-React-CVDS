@@ -4,6 +4,7 @@
   align-items: center;
   height: 100vh;
   background-color: #f0f0f0;
+  background-image: url('https://picsum.photos/seed/picsum/2000/1080');
   form {
     display: flex;
     flex-direction: column;
