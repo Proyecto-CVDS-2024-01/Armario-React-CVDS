@@ -1,24 +1,44 @@
 .ImagesHeader{
   padding: 1em;
-  background: transparent;
+  background: #f5f5dc; /* Un color de fondo beige */
+  border-bottom: 1px solid #f5f5dc; /* Un color de borde beige */
+  transition: all 0.3s ease;
+}
+
+.ImagesHeader:hover {
+  background: #f5f5dc; /* Un color de fondo beige al pasar el mouse */
 }
 
 .Body {
   padding: 10em;
   text-align: center;
-  background-color: antiquewhite;
+  background-color: #f5f5dc; /* Un color de fondo beige */
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
 }
 
 .Footer {
   padding: 10em;
   display: flex;
-  background-color: rgb(255, 255, 255);
+  background-color: #f5f5dc; /* Un color de fondo beige */
   justify-content: center;
   align-items: center;
+  border-top: 1px solid #f5f5dc; /* Un color de borde beige */
+  position: relative;
+}
+
+.Footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(to right, #f5f5dc, #f5f5dc); /* Un gradiente de color beige */
 }
 
 .Bottom {
   padding: 10em;
   text-align: center;
-  background-color: #E5E5E5;
+  background-color: #f5f5dc; /* Un color de fondo beige */
+  border-radius: 10px;
 }

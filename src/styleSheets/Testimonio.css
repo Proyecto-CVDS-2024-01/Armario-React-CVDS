@@ -1,25 +1,50 @@
-.Testimonio{
-    width: 1170px;
-    height: 368px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    align-items: center;
-    background-color: #c68a40;
-    user-select: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.Contenedor-texto{
+.Testimonio {
     display: flex;
-    flex-direction: column;
-    justify-self: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+    background-color: #000033;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
 }
 
-.Nombre-Persona{
-    font-size: 20px;
-    font-style: oblique;
+.Testimonio:hover {
+    transform: scale(1.05);
 }
+
+.Testimonio img {
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.Testimonio img:hover {
+    transform: scale(1.1);
+}
+
+.Contenedor-texto {
+    max-width: 50%;
+    background-color: #000033;
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+
 .Texto-Testimonio {
-    margin: 0;   
+    color: #808080;
+    line-height: 1.6;
+    font-size: 1em;
+    text-indent: 2em;
+}
+
+.Nombre-Persona {
+    color: #e07a5f;
+    font-size: 1.2em;
+    text-align: right;
+    font-style: italic;
 }
     

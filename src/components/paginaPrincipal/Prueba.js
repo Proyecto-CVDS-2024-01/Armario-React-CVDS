@@ -1,11 +1,10 @@
 import React from 'react';
-
+import "../../styleSheets/Prueba.css";
 export function Prueba(){
 
   const goToProductPage = () => {
     window.location.href="/producto1";
   }
-
   return (
     <div data-testid="about-1">
       <div className="Invitacion">
