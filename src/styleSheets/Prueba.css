@@ -1,28 +1,27 @@
 .Invitacion {
     text-align: center;
     padding: 20px;
-    background-color: #000033;
+    background-color: #f7d4cb;
     border-radius: 15px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     
     h3 {
-      color: #8B4513;
+      color: #000000;
       font-size: 24px;
       margin-bottom: 10px;
-      text-shadow: 2px 2px 4px #000000;
     }
     
     p {
-      color: #81b29a;
+      color: #000000;
       font-size: 18px;
       margin-bottom: 20px;
       text-indent: 30px;
     }
   
     button {
-      background-color: #8B4513;
-      color: #f4f1de;
+      background-color: #ffffff;
+      color: #040400;
       border: none;
       padding: 12px 24px;
       font-size: 18px;
@@ -30,7 +29,7 @@
       border-radius: 15px;
       transition-duration: 0.4s;
       font-family: 'Courier New', Courier, monospace;
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
       position: relative;
       overflow: hidden;
     }
@@ -53,8 +52,8 @@
     }
     
     button:hover {
-      background-color: #a0522d;
-      color: #f4f1de;
+      background-color: antiquewhite;
+      color: #010101;
       transform: scale(1.05);
     }
 }

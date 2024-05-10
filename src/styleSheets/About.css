@@ -1,12 +1,12 @@
 .about-container{
-  div[data-testid="about-1"] {
-    width: 100%;
-    padding: 2em;
-    background-color: antiquewhite;
-    border-radius: 15px;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
+div[data-testid="about-1"] {
+  width: 100%;
+  padding: 2em;
+  background-color: antiquewhite;
+  border-radius: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
   div[data-testid="about-1"] h1 {
     color: #000000;
     text-align: center;
