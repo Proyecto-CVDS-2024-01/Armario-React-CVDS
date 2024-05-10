@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import {
-  Collapse,
+  Offcanvas,
+  OffcanvasBody,
+  OffcanvasHeader,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
+  NavbarToggler,
+  Collapse,
   Nav,
   NavItem,
   NavLink,
@@ -12,17 +15,25 @@ import {
   DropdownMenu,
   DropdownItem,
   Container,
-  Col, 
+  Col,
   Row,
   Button
 } from 'reactstrap';
-import {LogIn} from './LogIn';
+import { LogIn } from './LogIn';
 import { Link } from 'react-router-dom';
+import usuario from  '../../images/perfil.png'
 
 function Top() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenNavbar, setIsOpenNavbar] = useState(false);
+  const [isOpenOffcanvas, setIsOpenOffcanvas] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggleNavbar = () => {
+    setIsOpenNavbar(!isOpenNavbar);
+  };
+
+  const toggleOffcanvas = () => {
+    setIsOpenOffcanvas(!isOpenOffcanvas);
+  };
 
   return (
     <div className='Encabezado'>
@@ -31,8 +42,8 @@ function Top() {
           <Col>
             <Navbar fixed>
               <NavbarBrand href="/">Tu armario virtual</NavbarBrand>
-              <NavbarToggler onClick={toggle} />
-              <Collapse isOpen={isOpen} navbar>
+              <NavbarToggler onClick={toggleNavbar} />
+              <Collapse isOpen={isOpenNavbar} navbar>
                 <Nav className="me-auto" justified card>
                   <NavItem>
                     <NavLink href="/">Inicio</NavLink>
@@ -68,12 +79,20 @@ function Top() {
           <Col xs='1'>
             <LogIn />
           </Col>
-          <Col xs='1'>
-            <Button size='lg'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-              </svg>
+          <Col xs='1' className="position-relative" justified card>
+            <Button onClick={toggleOffcanvas} style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', background: 'white', border: 'none', padding: '0' }}>
+              <img src={usuario} alt="Foto de Usuario" style={{ width: '30px', borderRadius: '50%' }} />
             </Button>
+            <Offcanvas backdrop={false} direction="end" isOpen={isOpenOffcanvas}>
+              <OffcanvasHeader toggle={toggleOffcanvas}>
+                Offcanvas
+              </OffcanvasHeader>
+              <OffcanvasBody>
+                <strong>
+                  Perfil de usuario
+                </strong>
+              </OffcanvasBody>
+            </Offcanvas>
           </Col>
         </Row>
       </Container>

@@ -26,6 +26,10 @@
   color: #929FA9; /* Color de la fuente */
 }
 
+.btn-conjuntos1.selected h1 {
+  color: rgb(145, 21, 21); /* Color de la fuente cuando está seleccionado */
+}
+
 .clean-container{
   user-select:none;
   width: 20%;
