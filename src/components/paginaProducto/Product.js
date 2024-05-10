@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Accessories from './imagenesCuerpo/Accessories';
 import Jackets from './imagenesCuerpo/Jackets';
 import Pants from './imagenesCuerpo/Pants';
