@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import {Modal, ModalHeader, ModalBody, ModalFooter, Button,
+import {Modal, ModalHeader, ModalBody, Button,
   InputGroup,
   InputGroupText,
   Input
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+import Perfil from '../paginaProducto/Perfil';
 import axios from 'axios';
 
 export function LogIn(){
@@ -14,15 +15,23 @@ export function LogIn(){
   const [password, setPassword] = useState('');
   const [respuesta, setRespuesta] = useState('');
 
+  const handleSubmit =(e) =>{
+    e.preventDefault();
+    if (chequearUsuarioPost(username,password)){
+      <Perfil/>
+    }else{
+      alert('')
+    }
+  }
+
   const chequearUsuarioPost= async (username, password)=>{
-    const url='http://localhost:8080/login';
+    const url='http://basecvds.azurewebsites.net/login';
     const body ={
-      id: "",
       username: username,
       password: password
     }
     setRespuesta(axios.post(url,body));
-    return
+    return respuesta
   }
 
   return (
@@ -33,24 +42,22 @@ export function LogIn(){
       <Modal isOpen={modal} toggle={toggle} centered backdrop={false} size='sm'>
         <ModalHeader toggle={toggle}>Inicio Sesion</ModalHeader>
         <ModalBody>
-          <form>
-          <InputGroup>
-            <InputGroupText>@</InputGroupText>
-            <Input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
-          </InputGroup>
-          <br/>
-          <InputGroup>
-            <InputGroupText>Password</InputGroupText>
-            <Input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
-          </InputGroup>
-          <Button color="primary" tag={Link} to='/perfil' onClick={() => chequearUsuarioPost(username,password)}>
-            Aceptar
-          </Button>
-          <Button color="secondary" onClick={toggle}>
-            Cancelar
-          </Button>
+          <form onSubmit={handleSubmit}>
+            <InputGroup>
+              <InputGroupText>@</InputGroupText>
+              <Input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+            </InputGroup>
+            <br/>
+            <InputGroup>
+              <InputGroupText>Password</InputGroupText>
+              <Input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+            </InputGroup>
+            <br/>
+            <Button color="primary">
+              Iniciar Sesion
+            </Button>
           </form>
-          </ModalBody>
+        </ModalBody>
       </Modal>
     </div>
   );
