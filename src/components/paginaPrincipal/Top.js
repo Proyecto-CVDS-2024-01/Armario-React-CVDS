@@ -40,7 +40,7 @@ function Top() {
       <Container fluid>
         <Row>
           <Col>
-            <Navbar fixed>
+            <Navbar>
               <NavbarBrand href="/">Tu armario virtual</NavbarBrand>
               <NavbarToggler onClick={toggleNavbar} />
               <Collapse isOpen={isOpenNavbar} navbar>
@@ -57,7 +57,7 @@ function Top() {
                     <DropdownToggle nav caret>
                       Productos
                     </DropdownToggle>
-                    <DropdownMenu right>
+                    <DropdownMenu end>
                       <DropdownItem tag={Link} to="/producto1">Armario Virtual</DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
@@ -65,7 +65,7 @@ function Top() {
                     <DropdownToggle nav caret>
                       opciones ropa armario virtual
                     </DropdownToggle>
-                    <DropdownMenu right>
+                    <DropdownMenu end>
                       <DropdownItem tag={Link} to="/camisas">camisas</DropdownItem>
                       <DropdownItem tag={Link} to="/chaquetas">chaquetas</DropdownItem>
                       <DropdownItem tag={Link} to="/pantalones">pantalones</DropdownItem>

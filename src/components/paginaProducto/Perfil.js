@@ -82,7 +82,7 @@ function Perfil(){
   
 return (
 	<div>
-		<Navbar fixed>
+		<Navbar>
 			<NavbarBrand href="/">Tu armario virtual</NavbarBrand>
 			<NavbarToggler onClick={toggle} />
 			<Collapse isOpen={isOpen} navbar></Collapse>
