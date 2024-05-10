@@ -7,22 +7,23 @@ import {Modal, ModalHeader, ModalBody, ModalFooter, Button,
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-function chequearUsuarioPost(username, password){
-  const url='http://localhost:8080/LogIn/chequearUsuario';
-  const body ={
-    id: '',
-    username: username,
-    password: password
-  }
-  console.log( axios.post(url,body));
-}
-
 export function LogIn(){
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  //const [respuesta, setRespuesta] = useState(false);
+  const [respuesta, setRespuesta] = useState('');
+
+  const chequearUsuarioPost= async (username, password)=>{
+    const url='http://localhost:8080/login';
+    const body ={
+      id: "",
+      username: username,
+      password: password
+    }
+    setRespuesta(axios.post(url,body));
+    return
+  }
 
   return (
     <div>
@@ -32,6 +33,7 @@ export function LogIn(){
       <Modal isOpen={modal} toggle={toggle} centered backdrop={false} size='sm'>
         <ModalHeader toggle={toggle}>Inicio Sesion</ModalHeader>
         <ModalBody>
+          <form>
           <InputGroup>
             <InputGroupText>@</InputGroupText>
             <Input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
@@ -41,15 +43,14 @@ export function LogIn(){
             <InputGroupText>Password</InputGroupText>
             <Input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
           </InputGroup>
-        </ModalBody>
-        <ModalFooter>
           <Button color="primary" tag={Link} to='/perfil' onClick={() => chequearUsuarioPost(username,password)}>
             Aceptar
           </Button>
           <Button color="secondary" onClick={toggle}>
             Cancelar
           </Button>
-        </ModalFooter>
+          </form>
+          </ModalBody>
       </Modal>
     </div>
   );
