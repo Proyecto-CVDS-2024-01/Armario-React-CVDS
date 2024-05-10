@@ -71,14 +71,14 @@
   width: 100%;
 }
 .BodyPage {
-  width: 75%;
+  width: 100%;
   margin: 0 auto; 
   text-align: center;
   background-color: antiquewhite;
 }
 
 .ProductPage{
-  width: 100%;
+  width: 75%;
   margin: 0 auto; 
   background-color: rgb(255, 255, 255);
 }

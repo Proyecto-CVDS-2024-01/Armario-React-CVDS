@@ -1,7 +1,8 @@
 import React from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
 import '../../../styleSheets/ProductPage.css';
-import watch from  '../../../images/productPage/watch.png';
+import watch from '../../../images/productPage/watch.png';
+import Tendencias from '../Tendencias';
 
 const items = [
   {
@@ -24,12 +25,27 @@ const items = [
   },
 ];
 
-export function AccessoriesSlider() {
+export function AccessoriesSlider({ selectedStyle }) {
+  const formalBowling = selectedStyle === 'formal' ? Tendencias.sections[1].products[3].imageUrl : null;
+
+  const formalItems = formalBowling
+    ? [
+        {
+          src: formalBowling,
+          altText: 'Formal Bowling',
+          caption: '',
+          key: 4,
+        },
+      ]
+    : [];
+
+  const accessoriesItems = [...items, ...formalItems];
+
   return (
     <div className='clothing-box-1' data-testid="accessories-1">
       <h1>Accessories</h1>
       <div className="img">
-        <UncontrolledCarousel items={items} />
+        <UncontrolledCarousel items={accessoriesItems} />
       </div>
     </div>
   );

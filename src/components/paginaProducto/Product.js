@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Accessories from './imagenesCuerpo/Accessories';
 import Jackets from './imagenesCuerpo/Jackets';
@@ -9,13 +8,11 @@ import Socks from './imagenesCuerpo/Socks';
 import Conjuntos1 from './imagenesCuerpo/Conjuntos/Conjuntos1';
 import Conjuntos2 from './imagenesCuerpo/Conjuntos/Conjuntos2';
 import Clean from './imagenesCuerpo/Clean';
-import '../../styleSheets/ProductPage.css'
+import '../../styleSheets/ProductPage.css';
 
-export function Product() {
-  const [selectedStyle, setSelectedStyle] = useState(null);
-
+export function Product({ selectedStyle, onStyleSelect }) {
   const handleStyleSelection = (style) => {
-    setSelectedStyle(style);
+    onStyleSelect(style);
   };
 
   return (
@@ -23,7 +20,7 @@ export function Product() {
       <h1 className="page-title">¿Con qué estilo quieres destacar hoy?</h1>
       <div className="clothing-container"> 
         <Clean />
-        <Accessories />
+        <Accessories selectedStyle={selectedStyle} />
         <Jackets />
         <Clean />
         <Conjuntos1 onStyleSelect={handleStyleSelection} selectedStyle={selectedStyle} />
@@ -38,4 +35,5 @@ export function Product() {
     </div>
   );
 };  
+
 export default Product;
