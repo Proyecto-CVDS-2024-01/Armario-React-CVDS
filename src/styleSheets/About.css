@@ -1,28 +1,28 @@
 .about-container{
-    div[data-testid="about-1"] {
+  div[data-testid="about-1"] {
+    width: 100%;
     padding: 2em;
-    background-color: #000033;
+    background-color: antiquewhite;
     border-radius: 15px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
     font-family: 'Montserrat', sans-serif;
   }
   
   div[data-testid="about-1"] h1 {
-    color: #e07a5f;
+    color: #000000;
     text-align: center;
     font-size: 2em;
     margin-bottom: 1em;
   }
   
   div[data-testid="about-1"] h3 {
-    color: #3d405b;
+    color: #000000;
     text-align: center;
     font-size: 1.5em;
     margin-bottom: 1em;
   }
   
   div[data-testid="about-1"] p {
-    color: #81b29a;
+    color: #000000;
     line-height: 1.6;
     font-size: 1em;
     text-indent: 2em;
