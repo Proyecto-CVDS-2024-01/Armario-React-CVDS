@@ -16,7 +16,6 @@ export function LogIn(){
   const [respuesta, setRespuesta] = useState('');
 
   const handleSubmit =(e) =>{
-    e.preventDefault();
     chequearUsuarioPost(username,password);
   }
 
