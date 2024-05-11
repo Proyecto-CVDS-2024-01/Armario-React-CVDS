@@ -31,6 +31,7 @@ export function LogIn(){
       password: password
     }
     setRespuesta(axios.post(url,body));
+    console.log(respuesta);
     return respuesta
   }
 
