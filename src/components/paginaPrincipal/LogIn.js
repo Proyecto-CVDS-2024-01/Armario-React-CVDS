@@ -17,11 +17,7 @@ export function LogIn(){
 
   const handleSubmit =(e) =>{
     e.preventDefault();
-    if (chequearUsuarioPost(username,password)){
-      <Perfil/>
-    }else{
-      alert('')
-    }
+    chequearUsuarioPost(username,password);
   }
 
   const chequearUsuarioPost= async (username, password)=>{
