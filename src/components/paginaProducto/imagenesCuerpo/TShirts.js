@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../../styleSheets/ProductPage.css';
-import tshirt from '../../../images/productPage/tshirt.png';
 import { UncontrolledCarousel } from 'reactstrap';
 
 const items = [

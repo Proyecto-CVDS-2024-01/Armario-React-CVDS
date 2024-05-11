@@ -1,8 +1,6 @@
 import React from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
 import '../../../styleSheets/ProductPage.css';
-import watch from '../../../images/productPage/watch.png';
-
 const items = [
   {
     key: 4,

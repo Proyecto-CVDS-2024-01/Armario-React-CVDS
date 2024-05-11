@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../../styleSheets/ProductPage.css'
-import pants from  '../../../images/productPage/joggerPants.png'
 import { UncontrolledCarousel } from 'reactstrap';
 
 const items = [
