@@ -5,7 +5,7 @@ import {Modal, ModalHeader, ModalBody, Button,
   Input
 } from 'reactstrap';
 //import { Link } from 'react-router-dom';
-import Perfil from '../paginaProducto/Perfil';
+//import Perfil from '../paginaProducto/Perfil';
 import axios from 'axios';
 
 export function LogIn(){
