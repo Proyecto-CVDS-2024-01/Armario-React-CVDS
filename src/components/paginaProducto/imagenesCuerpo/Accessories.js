@@ -2,50 +2,36 @@ import React from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
 import '../../../styleSheets/ProductPage.css';
 import watch from '../../../images/productPage/watch.png';
-import Tendencias from '../Tendencias';
 
 const items = [
   {
-    src: watch,
-    altText: 'Watch 1',
-    caption: '',
+    key: 4,
+    name: 'BOWLING NYLON',
+    src: 'https://static.zara.net/assets/public/1018/da36/8da34bcba1e4/fa0b2965bde4/13100320400-e1/13100320400-e1.jpg?ts=1704904458287&w=275',
+    type: ['formal', 'accessory']
+  },
+  {
     key: 1,
-  },
-  {
-    src: 'https://picsum.photos/id/342/1200/400',
-    altText: 'Watch 2',
-    caption: '',
-    key: 2,
-  },
-  {
-    src: 'https://picsum.photos/id/349/1200/400',
-    altText: 'Watch 3',
-    caption: '',
-    key: 3,
-  },
+    name: 'BOWLING NYLON',
+    src: 'https://static.zara.net/assets/public/da87/73bd/1d104624b654/04fae8b40180/03920449700-e2/03920449700-e2.jpg?ts=1714725551901&w=563',
+    type: ['semiformal','casual', 'accessory']
+  }
+  
 ];
 
 export function AccessoriesSlider({ selectedStyle }) {
-  const formalBowling = selectedStyle === 'formal' ? Tendencias.sections[1].products[3].imageUrl : null;
 
-  const formalItems = formalBowling
-    ? [
-        {
-          src: formalBowling,
-          altText: 'Formal Bowling',
-          caption: '',
-          key: 4,
-        },
-      ]
-    : [];
+  let accessoriesItems = items;
 
-  const accessoriesItems = [...items, ...formalItems];
+  if (selectedStyle) {
+    accessoriesItems = items.filter(item => item.type.includes(selectedStyle));
+  }
 
   return (
     <div className='clothing-box-1' data-testid="accessories-1">
       <h1>Accessories</h1>
       <div className="img">
-        <UncontrolledCarousel items={accessoriesItems} />
+        <UncontrolledCarousel items={accessoriesItems.map(item => ({ src: item.src, altText: item.name, key: item.id }))} />
       </div>
     </div>
   );

@@ -21,12 +21,12 @@ export function Product({ selectedStyle, onStyleSelect }) {
       <div className="clothing-container"> 
         <Clean />
         <Accessories selectedStyle={selectedStyle} />
-        <Jackets />
+        <Jackets selectedStyle={selectedStyle}/>
         <Clean />
         <Conjuntos1 onStyleSelect={handleStyleSelection} selectedStyle={selectedStyle} />
-        <TShirts selectedStyle={selectedStyle} />
+        <TShirts selectedStyle={selectedStyle}/>
         <Pants selectedStyle={selectedStyle} />
-        <Conjuntos2 onStyleSelect={handleStyleSelection} selectedStyle={selectedStyle} />
+        <Conjuntos2 onStyleSelect={handleStyleSelection} selectedStyle={selectedStyle}/>
         <Clean />
         <Socks selectedStyle={selectedStyle} />
         <Shoes selectedStyle={selectedStyle} />

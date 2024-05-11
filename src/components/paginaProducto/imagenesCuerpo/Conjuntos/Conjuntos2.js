@@ -15,12 +15,12 @@ const Conjuntos2 = ({ onStyleSelect, selectedStyle }) => {
   return (
     <div className='clean-container' data-testid="tshirt-1">
       <Semiformal 
-        onClick={() => handleStyleClick("Semiformal")} 
-        selected={selectedStyle === "Semiformal"} 
+        onClick={() => handleStyleClick("semiformal")} 
+        selected={selectedStyle === "semiformal"} 
       />
       <Deportivo 
-        onClick={() => handleStyleClick("Deportivo")} 
-        selected={selectedStyle === "Deportivo"} 
+        onClick={() => handleStyleClick("deportivo")} 
+        selected={selectedStyle === "deportivo"} 
       />
     </div>
   )

@@ -1,35 +1,37 @@
 import React from 'react'
 import '../../../styleSheets/ProductPage.css'
-import jacket from  '../../../images/productPage/jacket.png'
 import { UncontrolledCarousel } from 'reactstrap';
 
 const items = [
   {
-    src: jacket,
-    altText: 'jacket 1',
-    caption: '',
     key: 1,
+    name: 'CHAQUETA ROJA',
+    src: 'https://static.zara.net/assets/public/0104/e156/740f49cf80e7/706cc377c701/08574456614-e1/08574456614-e1.jpg?ts=1710779479317&w=275',
+    type: ['semiformal', 'pantalon']
   },
   {
-    src: 'https://picsum.photos/id/342/1200/400',
-    altText: 'jacket 2',
-    caption: '',
     key: 2,
+    name: 'BUSO NEGRO',
+    src: 'https://static.zara.net/assets/public/48d0/421f/5f2242cab576/1fdbc4d48a5e/06518505401-e1/06518505401-e1.jpg?ts=1712218824552&w=275',
+    type: ['formal', 'chaqueta']
   },
-  {
-    src: 'https://picsum.photos/id/349/1200/400',
-    altText: 'jacket 3',
-    caption: '',
-    key: 3,
-  },
+  { key: 3, name: 'Chaqueta 1', src: 'https://static.zara.net/assets/public/d91d/4a54/23a64fcca76d/3695d1ee0795/08574500732-a1/08574500732-a1.jpg?ts=1713195155611&w=352',type: ['formal','semiformal', 'chaqueta'] },
+  { key: 4, name: 'Chaqueta 2',  src: 'https://static.zara.net/assets/public/4c52/4fd3/788746f4b137/f4934aea8e79/08574500806-a1/08574500806-a1.jpg?ts=1713195216779&w=352',type: ['formal','semiformal', 'chaqueta'] },
+  { key: 5, name: 'Chaqueta 3',src: 'https://static.zara.net/assets/public/4982/164d/203c420a944f/c2c4045c756d/03286412825-a1/03286412825-a1.jpg?ts=1713519710102&w=362',type: ['casual','semiformal',  'chaqueta'] },
 ];
 
-export function AccessoriesSlider() {
+export function AccessoriesSlider({ selectedStyle }) {
+  let accessoriesItems = items;
+
+  if (selectedStyle) {
+    accessoriesItems = items.filter(item => item.type.includes(selectedStyle));
+  }
+
   return (
     <div className='clothing-box-2' data-testid="jackets-1">
       <h1>Jackets</h1>
       <div className="img">
-        <UncontrolledCarousel items={items} />
+        <UncontrolledCarousel items={accessoriesItems} />
       </div>
     </div>
   );

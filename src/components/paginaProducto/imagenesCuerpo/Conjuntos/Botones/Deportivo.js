@@ -3,6 +3,7 @@ import { Button } from 'reactstrap';
 import '../../../../../styleSheets/ProductPage.css';
 
 const Deportivo = ({ onClick, selected }) => {
+  
   return (
       <Button 
         className={selected ? "btn-conjuntos1 btn-top selected" : "btn-conjuntos1 btn-top"} 
