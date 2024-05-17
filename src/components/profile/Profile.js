@@ -8,7 +8,7 @@ const Profile = () => {
     const [selectedShirt, setSelectedShirt] = useState(null);
     const [selectedPants, setSelectedPants] = useState(null);
     const [selectedJacket, setSelectedJacket] = useState(null);
-    const [user, setUser] = useState([]);
+    
 	let config = {
 		method: 'get',
 		maxBodyLength: Infinity,
@@ -20,7 +20,7 @@ const Profile = () => {
 	};
 	axios.request(config).then((response) => {
 		console.log(response.data);
-		setUser(JSON.stringify(response.data));
+		console.log(JSON.stringify(response.data));
 	})
 	.catch((error) => {
 		console.log(error);});
