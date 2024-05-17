@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import '../../styleSheets/Profile.css';
 import React, { useState } from 'react';
 import Top from '../paginaPrincipal/Top';
+import axios from 'axios';
 const Profile = () => {
     const [selectedItems, setSelectedItems] = useState([]);
     const [selectedShirt, setSelectedShirt] = useState(null);
