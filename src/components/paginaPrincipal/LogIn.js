@@ -4,8 +4,6 @@ import {Modal, ModalHeader, ModalBody, Button,
   InputGroupText,
   Input
 } from 'reactstrap';
-//import { Link } from 'react-router-dom';
-//import Perfil from '../paginaProducto/Perfil';
 import axios from 'axios';
 
 export function LogIn(){
@@ -13,21 +11,31 @@ export function LogIn(){
   const toggle = () => setModal(!modal);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [respuesta, setRespuesta] = useState('');
 
   const handleSubmit =(e) =>{
-    chequearUsuarioPost(username,password);
-  }
-
-  const chequearUsuarioPost= async (username, password)=>{
-    const url='http://basecvds.azurewebsites.net/login';
-    const body ={
-      username: username,
-      password: password
-    }
-    setRespuesta(axios.post(url,body));
-    console.log(respuesta);
-    return respuesta
+    e.preventDefault();
+    let data = JSON.stringify({
+      "username": username,
+      "password": password
+    });
+  
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'http://localhost:8080/login',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : data
+    };
+    
+    axios.request(config)
+    .then((response) => {
+      document.cookie = "authToken=" + JSON.stringify(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
   return (
