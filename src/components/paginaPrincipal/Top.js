@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   Offcanvas,
-  OffcanvasBody,
   OffcanvasHeader,
   Navbar,
   NavbarBrand,
@@ -21,7 +20,8 @@ import {
 } from 'reactstrap';
 import { LogIn } from './LogIn';
 import { Link } from 'react-router-dom';
-import usuario from  '../../images/perfil.png'
+import usuario from  '../../images/perfil.png';
+import Perfil from '../paginaProducto/Perfil';
 
 function Top() {
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
@@ -87,11 +87,7 @@ function Top() {
               <OffcanvasHeader toggle={toggleOffcanvas}>
                 Offcanvas
               </OffcanvasHeader>
-              <OffcanvasBody>
-                <strong>
-                  Perfil de usuario
-                </strong>
-              </OffcanvasBody>
+              <Perfil/>
             </Offcanvas>
           </Col>
         </Row>
