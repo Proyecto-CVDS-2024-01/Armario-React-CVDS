@@ -3,27 +3,38 @@ import '../../styleSheets/Profile.css';
 import React, { useState } from 'react';
 import Top from '../paginaPrincipal/Top';
 import axios from 'axios';
+
 const Profile = () => {
     const [selectedItems, setSelectedItems] = useState([]);
     const [selectedShirt, setSelectedShirt] = useState(null);
     const [selectedPants, setSelectedPants] = useState(null);
     const [selectedJacket, setSelectedJacket] = useState(null);
-    
-	let config = {
-		method: 'get',
-		maxBodyLength: Infinity,
-		url: 'http://localhost:8080/user/userId',
-		withCredentials: true,
-		headers: { 
-			'Content-Type': 'application/json'
-		},
-	};
-	axios.request(config).then((response) => {
-		console.log(response.data);
-		console.log(JSON.stringify(response.data));
-	})
-	.catch((error) => {
-		console.log(error);});
+    const authToken = sessionStorage.getItem('authToken');
+	
+    let prendas = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'http://localhost:8080/user/client/prendas',
+        withCredentials: true,
+        headers: { 
+            'Content-Type': 'application/json',
+            'authToken': `bearer ${authToken}`
+        }
+    };
+
+    axios.request(prendas).then((response) => {
+        console.log(authToken);
+        //console.log(response.data);
+        //console.log(JSON.stringify(response.data));
+        // Store the list of strings for later use
+        const listaPrendas = response.data;
+        // Use the listaPrendas variable as needed
+        // ...
+        console.log(listaPrendas);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
 
     const inventory = {
         camisas: [
