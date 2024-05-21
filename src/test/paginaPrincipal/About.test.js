@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import About from '../components/paginaPrincipal/About'
+import About from '../../components/paginaPrincipal/About'
 import '@testing-library/jest-dom'
 test('should render Aboutoo component', () => { 
     render(<About/>);

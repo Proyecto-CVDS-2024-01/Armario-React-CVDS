@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import Product from '../components/paginaProducto/Product'
+import Product from '../../components/paginaProducto/Product'
 import '@testing-library/jest-dom'
 test('should render Product component', () => { 
     render(<Product/>);

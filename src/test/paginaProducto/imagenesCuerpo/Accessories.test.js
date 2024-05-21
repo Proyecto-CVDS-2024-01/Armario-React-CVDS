@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import Accessories from '../components/paginaProducto/imagenesCuerpo/Accessories'
+import Accessories from '../../../components/paginaProducto/imagenesCuerpo/Accessories'
 import '@testing-library/jest-dom'
 test('should render Accesories component', () => { 
     render(<Accessories/>);
