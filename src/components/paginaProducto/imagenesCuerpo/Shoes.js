@@ -21,11 +21,12 @@ export function AccessoriesSlider({selectedStyle}) {
     accessoriesItems = items.filter(item => item.type.includes(selectedStyle));
   }
   return (
-    <div className='clothing-box-2' data-testid="shoes-1">
-      <h1>Shoes</h1>
+    <div className='product' data-testid="shoes-1">
+      
       <div className="img">
         <UncontrolledCarousel items={accessoriesItems} />
       </div>
+      <h2>Shoes</h2>
     </div>
   );
 }

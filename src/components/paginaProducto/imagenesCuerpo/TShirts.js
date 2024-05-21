@@ -23,11 +23,12 @@ export function AccessoriesSlider({ selectedStyle }) {
   }
 
   return (
-    <div className='clothing-box-2' data-testid="tshirts-1">
-      <h1>Tshirts</h1>
+    <div className='product' data-testid="tshirts-1">
+      
       <div className="img">
         <UncontrolledCarousel items={accessoriesItems} />
       </div>
+      <h2>Tshirts</h2>
     </div>
   );
 }

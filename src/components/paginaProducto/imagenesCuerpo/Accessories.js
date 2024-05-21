@@ -26,11 +26,11 @@ export function AccessoriesSlider({ selectedStyle }) {
   }
 
   return (
-    <div className='clothing-box-1' data-testid="accessories-1">
-      <h1>Accessories</h1>
+    <div className='product' data-testid="accessories-1">
       <div className="img">
         <UncontrolledCarousel items={accessoriesItems.map(item => ({ src: item.src, altText: item.name, key: item.id }))} />
       </div>
+      <h2>Accessories</h2>
     </div>
   );
 }

@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+h1 {
+  text-align: center;
+}
+
 @font-face {
   font-family: 'WC Mano Negra Bold';
   src: url('../styleSheets/Fuentes/WCManoNegraBoldBta.ttf') format('truetype');
@@ -16,14 +20,21 @@
   font-family: 'WC Mano Negra Bold', sans-serif;
   font-size: 34px;
   font-weight: bold;
-  color: #929FA9; /* Color de la fuente */
+  color: #000000; /* Color de la fuente */
 }
 
 .letra-conjuntos2 {
   font-family: 'Lava Pro Grunge', sans-serif;
   font-size: 60px;
   font-weight: bold;
-  color: #929FA9; /* Color de la fuente */
+  color: #000000; /* Color de la fuente */
+}
+
+.letra-conjuntos-titulo {
+  font-family: 'Lava Pro Grunge', sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #2c2c2c; /* Color de la fuente */
 }
 
 .btn-conjuntos1.selected h1 {
@@ -75,6 +86,9 @@
   margin: 0 auto; 
   text-align: center;
   background-color: antiquewhite;
+  background-image: url('../images/pexels-photo-207142.jpeg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Para cubrir todo el contenedor */
+  background-position: center;
 }
 
 .ProductPage{

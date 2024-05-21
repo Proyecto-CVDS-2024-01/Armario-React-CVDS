@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../../styleSheets/ProductPage.css';
 export function Tendencias({ selectedStyle }) {
   const sections = [
     {
