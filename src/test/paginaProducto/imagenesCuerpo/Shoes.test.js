@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import Shoes from '../components/paginaProducto/imagenesCuerpo/Shoes'
+import Shoes from '../../../components/paginaProducto/imagenesCuerpo/Shoes'
 import '@testing-library/jest-dom'
 test('should render Shoes component', () => { 
     render(<Shoes/>);

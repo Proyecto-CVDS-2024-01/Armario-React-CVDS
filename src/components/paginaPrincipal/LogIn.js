@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import { React, useState } from 'react';
 import {Modal, ModalHeader, ModalBody, Button,
   InputGroup,
   InputGroupText,
   Input
 } from 'reactstrap';
 import axios from 'axios';
-
-
 
 export function LogIn(){
   const [modal, setModal] = useState(false);
@@ -44,7 +42,7 @@ export function LogIn(){
   }
 
   return (
-    <div>
+    <div data-testid="LogIn-1">
       <Button color='blue' onClick={toggle}>
         Inicio Sesion
       </Button>
