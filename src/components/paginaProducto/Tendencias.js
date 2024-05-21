@@ -61,8 +61,7 @@ export function Tendencias({ selectedStyle }) {
     <div className="product">
       <img src={product.imageUrl} alt={product.name} />
       <h2>{product.name}</h2>
-      <p>{product.price}</p>
-      <button>AÑADIR</button>
+
     </div>
   );
 
