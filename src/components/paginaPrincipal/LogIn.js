@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import {Modal, ModalHeader, ModalBody, Button,
   InputGroup,
   InputGroupText,
@@ -6,12 +6,14 @@ import {Modal, ModalHeader, ModalBody, Button,
 } from 'reactstrap';
 import axios from 'axios';
 
+
+
 export function LogIn(){
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  
   const handleSubmit =(e) =>{
     e.preventDefault();
     let data = JSON.stringify({
@@ -42,7 +44,7 @@ export function LogIn(){
   }
 
   return (
-    <div data-testid="LogIn-1">
+    <div>
       <Button color='blue' onClick={toggle}>
         Inicio Sesion
       </Button>
