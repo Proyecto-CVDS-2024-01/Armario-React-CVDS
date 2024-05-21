@@ -1,12 +1,15 @@
-/*
-import {render, screen} from '@testing-library/react'
-import About from '../../components/paginaPrincipal/About'
+import {render, screen, cleanup} from '@testing-library/react'
+import Prueba from '../../components/paginaPrincipal/Prueba'
 import '@testing-library/jest-dom'
-test('should render Aboutoo component', () => { 
-    render(<About/>);
-    const aboutElement = screen.getByTestId('about-1');
-    expect(aboutElement).toBeInTheDocument();
-    expect(aboutElement).toHaveTextContent('SOBRE NOSOTROS');
+
+afterEach( () => {
+    cleanup();
 })
-FALTA
-*/ 
+
+test('should render Prueba component', () => { 
+    render(<Prueba/>);
+    const PruebaElement = screen.getByTestId('prueba-1');
+    expect(PruebaElement).toBeInTheDocument();
+    expect(PruebaElement).toHaveTextContent('Tu armario virtual está esperando para simplificar tu vida diaria. Organiza tu ropa, descubre nuevos looks y ahorra tiempo cada mañana.');
+    expect(PruebaElement).toHaveTextContent('¡Qué esperas!');
+});

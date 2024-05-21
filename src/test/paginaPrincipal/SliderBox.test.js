@@ -1,12 +1,13 @@
-/*
-import {render, screen} from '@testing-library/react'
-import About from '../../components/paginaPrincipal/About'
+import {render, screen, cleanup} from '@testing-library/react'
+import SliderBox from '../../components/paginaPrincipal/SliderBox'
 import '@testing-library/jest-dom'
-test('should render Aboutoo component', () => { 
-    render(<About/>);
-    const aboutElement = screen.getByTestId('about-1');
-    expect(aboutElement).toBeInTheDocument();
-    expect(aboutElement).toHaveTextContent('SOBRE NOSOTROS');
+
+afterEach( () => {
+    cleanup();
 })
-FALTA
-*/ 
+
+test('should render images in the slider box componets', () => { 
+    render(<SliderBox/>);
+    const SliderBoxElement = screen.getByTestId('sliderbox-1');
+    expect(SliderBoxElement).toBeInTheDocument();
+})

@@ -35,7 +35,7 @@ export function Slogan(){
   }
 
   return (
-    <div className="main-container">
+    <div className="main-container" data-testid="Slogan-1">
       <div className="slider-container">
         <div className='leftArrow' onClick={() => scrollToImage('prev')}>&#10092;</div>
         <div className='rightArrow' onClick={() => scrollToImage('next')}>&#10093;</div>

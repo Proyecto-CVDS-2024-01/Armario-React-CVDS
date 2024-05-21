@@ -44,6 +44,7 @@
       "last 1 safari version"
     ]
   },
+
   "jest": {
     "coverageThreshold": {
       "global": {
@@ -51,6 +52,7 @@
       }
     }
   },
+
   "devDependencies": {
     "@testing-library/react": "^15.0.2",
     "react-test-renderer": "^18.2.0"

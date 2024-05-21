@@ -24,7 +24,7 @@ const items = [
 
 export function SliderBox() {
   return (
-    <div className='ImagesHeader'>
+    <div className='ImagesHeader' data-testid="sliderbox-1">
   	<UncontrolledCarousel items={items}/>
     </div>
   );

@@ -37,7 +37,7 @@ const toggleOffcanvas = () => {
 };
 
 return (
-  <div className='Encabezado'>
+  <div className='Encabezado' data-testid="Top-1">
     <Container fluid>
       <Row>
         <Col>
