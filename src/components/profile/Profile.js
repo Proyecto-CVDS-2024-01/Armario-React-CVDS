@@ -11,30 +11,26 @@ const Profile = () => {
     const [selectedJacket, setSelectedJacket] = useState(null);
     const authToken = sessionStorage.getItem('authToken');
 	
-    let prendas = {
+    let config = {
         method: 'get',
         maxBodyLength: Infinity,
         url: 'http://localhost:8080/user/client/prendas',
-        withCredentials: true,
         headers: { 
+            'Access-Control-Expose-Headers': 'authToken',
             'Content-Type': 'application/json',
-            'authToken': `bearer ${authToken}`
+            'authToken': 'eab5e6b2-eaf6-45ab-b531-85a87d2c0d89'
         }
     };
-
-    axios.request(prendas).then((response) => {
-        console.log(authToken);
-        //console.log(response.data);
-        //console.log(JSON.stringify(response.data));
-        // Store the list of strings for later use
-        const listaPrendas = response.data;
-        // Use the listaPrendas variable as needed
-        // ...
-        console.log(listaPrendas);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+    
+    axios.request(config)
+        .then((response) => {
+            console.log('Response Data:', response.data);
+            const authToken = response.headers['authToken'];
+            console.log('authToken:', authToken);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 
     const inventory = {
         camisas: [

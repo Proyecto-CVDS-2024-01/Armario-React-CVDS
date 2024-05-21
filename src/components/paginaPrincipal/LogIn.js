@@ -32,9 +32,10 @@ export function LogIn(){
     }; 
     axios.request(config)
     .then((response) => {
-      console.log(response.data.token);
+      //console.log(response.data.token);
       const authToken = sessionStorage.setItem('authToken', response.data.token);
-      console.log(authToken);
+      console.log(sessionStorage.getItem('authToken'));
+      //console.log(authToken);
     })
     .catch((error) => {
       console.log(error);
