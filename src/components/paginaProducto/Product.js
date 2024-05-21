@@ -17,7 +17,10 @@ export function Product({ selectedStyle, onStyleSelect }) {
 
   return (
     <div data-testid="product-1">
-      <h1 className="page-title">¿Con qué estilo quieres destacar hoy?</h1>
+      <br></br>
+      <br></br>
+      <h1 className="letra-conjuntos-titulo">¿Con qué estilo quieres destacar hoy?</h1>
+      <br></br>
       <div className="clothing-container"> 
         <Clean />
         <Accessories selectedStyle={selectedStyle} />
@@ -32,6 +35,8 @@ export function Product({ selectedStyle, onStyleSelect }) {
         <Shoes selectedStyle={selectedStyle} />
         <Clean />
       </div>   
+      <br></br>
+      <br></br>
     </div>
   );
 };  

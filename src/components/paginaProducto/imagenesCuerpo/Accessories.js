@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
 import '../../../styleSheets/ProductPage.css';
+
 const items = [
   {
     key: 4,
@@ -12,25 +13,31 @@ const items = [
     key: 1,
     name: 'BOWLING NYLON',
     src: 'https://static.zara.net/assets/public/da87/73bd/1d104624b654/04fae8b40180/03920449700-e2/03920449700-e2.jpg?ts=1714725551901&w=563',
-    type: ['semiformal','casual', 'accessory']
+    type: ['semiformal', 'casual', 'accessory']
   }
-  
 ];
 
 export function AccessoriesSlider({ selectedStyle }) {
+  const [accessoriesItems, setAccessoriesItems] = useState(items);
 
-  let accessoriesItems = items;
-
-  if (selectedStyle) {
-    accessoriesItems = items.filter(item => item.type.includes(selectedStyle));
-  }
+  useEffect(() => {
+    if (selectedStyle) {
+      setAccessoriesItems(items.filter(item => item.type.includes(selectedStyle)));
+    } else {
+      setAccessoriesItems(items);
+    }
+  }, [selectedStyle]);
 
   return (
-    <div className='clothing-box-1' data-testid="accessories-1">
-      <h1>Accessories</h1>
+    <div className='product' data-testid="accessories-1">
       <div className="img">
-        <UncontrolledCarousel items={accessoriesItems.map(item => ({ src: item.src, altText: item.name, key: item.id }))} />
+        <UncontrolledCarousel key={selectedStyle} items={accessoriesItems.map(item => ({
+          src: item.src,
+          altText: item.name,
+          key: item.key
+        }))} />
       </div>
+      <h2>Accessories</h2>
     </div>
   );
 }

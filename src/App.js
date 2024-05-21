@@ -15,6 +15,7 @@ import SobreNosotros from './components/SobreNosotros/SobreNosotros';
 import Perfil from './components/paginaProducto/Perfil';
 import Contactanos from './components/SobreNosotros/contactanos';
 import Profile from './components/profile/Profile';
+import Register from './components/paginaPrincipal/register';
 function PaginaPrincipal() {
   return (
     <div className='App'>
@@ -51,6 +52,7 @@ function App() {
         <Route path='/perfil' element={<Perfil />} />
         <Route path='/contactanos' element={<Contactanos />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
     </Router>
     
