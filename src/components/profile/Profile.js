@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../styleSheets/Profile.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Top from '../paginaPrincipal/Top';
 import axios from 'axios';
 
@@ -10,44 +10,38 @@ const Profile = () => {
     const [selectedPants, setSelectedPants] = useState(null);
     const [selectedJacket, setSelectedJacket] = useState(null);
     const authToken = sessionStorage.getItem('authToken');
-	
-    let config = {
-        method: 'get',
-        maxBodyLength: Infinity,
-        url: 'http://localhost:8080/user/client/prendas',
-        headers: { 
-            'Access-Control-Expose-Headers': 'authToken',
-            'Content-Type': 'application/json',
-            'authToken': 'eab5e6b2-eaf6-45ab-b531-85a87d2c0d89'
-        }
-    };
-    
-    axios.request(config)
-        .then((response) => {
-            console.log('Response Data:', response.data);
-            const authToken = response.headers['authToken'];
-            console.log('authToken:', authToken);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    const [inventory, setInventory] = useState(null);
 
-    const inventory = {
-        camisas: [
-            { name: 'Camisa 1', imageUrl: 'https://static.zara.net/assets/public/0104/e156/740f49cf80e7/706cc377c701/08574456614-e1/08574456614-e1.jpg?ts=1710779479317&w=275' },
-            { name: 'Camisa 2', imageUrl: 'https://static.zara.net/assets/public/48d0/421f/5f2242cab576/1fdbc4d48a5e/06518505401-e1/06518505401-e1.jpg?ts=1712218824552&w=275' },
-            // Añade más camisas aquí
-        ],
-        pantalones: [
-            { name: 'Pantalón 1', imageUrl: 'https://static.zara.net/assets/public/5b00/6436/e03c471ba043/858735d7f7b0/04432485401-e1/04432485401-e1.jpg?ts=1710954757003&w=275' },
-            {name: "Pantalón 2", imageUrl: "https://static.zara.net/assets/public/1a04/371c/949c44b9b9b6/9a2ba049bec3/06786400707-e1/06786400707-e1.jpg?ts=1709822870697&w=275"},
-        ],
-        chaquetas: [
-            { name: 'Chaqueta 1', imageUrl: '/images/chaqueta1.jpg' },
-            // Añade más chaquetas aquí
-        ],
-        // Añade más categorías aquí
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/user/client/prendas', {
+                    headers: {
+                        'authToken': authToken
+                    }
+                });
+                const listaPrendas = response.data;
+                setInventory({
+                    camisas: listaPrendas
+                        .filter((prenda) => prenda.tipo === "CAMISA")
+                        .map((prenda, index) => ({
+                            name: `camisa ${index + 1}`,
+                            imageUrl: `data:image/jpeg;base64,${prenda.imageUrlBase64}`,
+                        })),
+                    pantalones: listaPrendas
+                        .filter((prenda) => prenda.tipo === "PANTALON")
+                        .map((prenda, index) => ({
+                            name: `pantalon ${index + 1}`,
+                            imageUrl: `data:image/jpeg;base64,${prenda.imageUrlBase64}`,
+                        })),
+                });
+                   
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, [authToken]);
 
     const selectItem = (category, item) => {
         switch (category) {
@@ -75,6 +69,10 @@ const Profile = () => {
             alert('Por favor, selecciona una prenda de cada categoría.');
         }
     };
+
+    if (!inventory) {
+        return <div>Cargando...</div>;
+    }
 
     return (
         <div className="profile">
@@ -123,4 +121,3 @@ const ProfilePage = () => {
 }
 
 export default ProfilePage;
-
