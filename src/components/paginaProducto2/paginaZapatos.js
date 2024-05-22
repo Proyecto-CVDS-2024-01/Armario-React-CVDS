@@ -24,7 +24,7 @@ function Zapatos() {
 
 function PaginaZapatos() {
   return (
-    <div className="PaginaZapatos">
+    <div className="PaginaZapatos" data-testid="PaginaZapatos-1">
       <Top />
       <Zapatos />
     </div>

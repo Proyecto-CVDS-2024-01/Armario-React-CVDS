@@ -1,12 +1,29 @@
-/*
-import {render, screen} from '@testing-library/react'
-import About from '../../components/paginaPrincipal/About'
+import {render, screen, cleanup} from '@testing-library/react'
+import PaginaCamisas from '../../components/paginaProducto2/paginaCamisas'
 import '@testing-library/jest-dom'
-test('should render Aboutoo component', () => { 
-    render(<About/>);
-    const aboutElement = screen.getByTestId('about-1');
-    expect(aboutElement).toBeInTheDocument();
-    expect(aboutElement).toHaveTextContent('SOBRE NOSOTROS');
+
+jest.mock('../../components/paginaPrincipal/Top', () => () => <div>Top</div>);
+
+afterEach( () => {
+    cleanup();
 })
-FALTA
-*/ 
+
+test('should render PaginaCamisas component', () => { 
+    render(<PaginaCamisas/>);
+    const PaginaCamisasElement = screen.getByTestId('PaginaCamisas-1');
+    expect(PaginaCamisasElement).toBeInTheDocument();
+
+    
+})
+
+test('should render Top', () => {
+    render(<PaginaCamisas />);
+    expect(screen.getByText('Top')).toBeInTheDocument();
+
+});
+
+test('should render multiple images', () => {
+    render(<PaginaCamisas />);
+    const images = screen.getAllByRole('img');
+    expect(images.length).toBeGreaterThan(0);
+});
