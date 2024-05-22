@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LogIn from './LogIn';
 import { Link } from 'react-router-dom';
 import usuario from  '../../images/perfil.png';
+import Perfil from '../paginaProducto/Perfil';
 import Profile from '../profile/ProfileCanvas'; 
 import {
 Offcanvas,
@@ -85,13 +86,13 @@ return (
             <img src={usuario} alt="Foto de Usuario" style={{ width: '30px', borderRadius: '50%' }} />
                     <Offcanvas backdrop={false} direction="end" isOpen={isOpenOffcanvas}>
                       <OffcanvasHeader toggle={toggleOffcanvas}>
-                        Offcanvas
+                        Perfil
                       </OffcanvasHeader>
                       <OffcanvasBody>
                         <strong>
                           Perfil de usuario
                         </strong>
-                        <Profile /> {/* Agrega el componente Profile */}
+                        <Perfil />
                       </OffcanvasBody>
                     </Offcanvas>
           </Button>

@@ -36,7 +36,6 @@ const Profile = () => {
                             imageUrl: `data:image/jpeg;base64,${prenda.imageUrlBase64}`,
                         })),
                 });
-                   
             } catch (error) {
                 console.error(error);
             }
