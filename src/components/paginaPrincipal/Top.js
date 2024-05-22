@@ -3,26 +3,25 @@ import LogIn from './LogIn';
 import { Link } from 'react-router-dom';
 import usuario from  '../../images/perfil.png';
 import Perfil from '../paginaProducto/Perfil';
-import Profile from '../profile/ProfileCanvas'; 
 import {
-Offcanvas,
-OffcanvasBody,
-OffcanvasHeader,
-Navbar,
-NavbarBrand,
-NavbarToggler,
-Collapse,
-Nav,
-NavItem,
-NavLink,
-UncontrolledDropdown,
-DropdownToggle,
-DropdownMenu,
-DropdownItem,
-Container,
-Col,
-Row,
-Button
+  Offcanvas,
+  OffcanvasBody,
+  OffcanvasHeader,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Collapse,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Container,
+  Col,
+  Row,
+  Button
 } from 'reactstrap';
 
 function Top() {

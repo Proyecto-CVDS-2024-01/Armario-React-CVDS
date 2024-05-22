@@ -6,8 +6,6 @@ import {Modal, ModalHeader, ModalBody, Button,
 } from 'reactstrap';
 import axios from 'axios';
 
-
-
 export function LogIn(){
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
@@ -32,10 +30,7 @@ export function LogIn(){
     }; 
     axios.request(config)
     .then((response) => {
-      //console.log(response.data.token);
-      const authToken = sessionStorage.setItem('authToken', response.data.token);
-      console.log(sessionStorage.getItem('authToken'));
-      //console.log(authToken);
+      sessionStorage.setItem('authToken', response.data.token);
     })
     .catch((error) => {
       console.log(error);
