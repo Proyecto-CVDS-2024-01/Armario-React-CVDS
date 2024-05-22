@@ -5,7 +5,7 @@ import '../../../../../styleSheets/ProductPage.css';
 const Deportivo = ({ onClick, selected }) => {
   
   return (
-      <Button 
+      <Button data-testid="Deportivo-1"
         className={selected ? "btn-conjuntos1 btn-top selected" : "btn-conjuntos1 btn-top"} 
         color="link" 
         onClick={onClick}

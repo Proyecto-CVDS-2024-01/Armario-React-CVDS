@@ -8,6 +8,6 @@ afterEach(() => {
 
 test('should render conjuntos1 component', () => { 
     render(<Conjuntos2/>);
-    const conjuntos2Element = screen.getByTestId('Conjuntos1-1');
+    const conjuntos2Element = screen.getByTestId('Conjuntos2-1');
     expect(conjuntos2Element).toBeInTheDocument();
 })
