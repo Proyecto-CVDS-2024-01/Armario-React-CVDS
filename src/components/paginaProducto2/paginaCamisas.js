@@ -24,7 +24,7 @@ const Camisas = () => {
 
 function PaginaCamisas() {
   return (
-    <div className="PaginaCamisas">
+    <div className="PaginaCamisas" data-testid="PaginaCamisas-1">
       <Top />
       <Camisas />
     </div>

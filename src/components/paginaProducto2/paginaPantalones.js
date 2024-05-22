@@ -10,7 +10,7 @@ const products = [
 
 function Pantalones() {
   return (
-    <div className="product-grid">
+    <div className="product-grid" data-testid="PaginaPantalones-1">
       {products.map(product => (
         <div key={product.id} className="product-card">
           <img className="product-image" src={product.image} alt={product.name} />

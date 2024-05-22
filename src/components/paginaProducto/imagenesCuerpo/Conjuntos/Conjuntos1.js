@@ -13,7 +13,7 @@ const Conjuntos1 = ({ onStyleSelect, selectedStyle }) => {
   };
 
   return (
-    <div className='clean-container' data-testid="tshirt-1">
+    <div className='clean-container' data-testid="Conjuntos1-1">
       <Formal 
         onClick={() => handleStyleClick("formal")} 
         selected={selectedStyle === "formal"} 

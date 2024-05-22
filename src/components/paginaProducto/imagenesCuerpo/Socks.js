@@ -23,7 +23,7 @@ export function AccessoriesSlider({ selectedStyle }) {
   }, [selectedStyle]);
 
   return (
-    <div className='product' data-testid="pants-1">
+    <div className='product' data-testid="socks-1">
       <div className="img">
         <UncontrolledCarousel 
           key={selectedStyle} 

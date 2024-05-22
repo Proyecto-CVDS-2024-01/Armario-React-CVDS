@@ -4,7 +4,7 @@ import '../../../../../styleSheets/ProductPage.css';
 
 const Semiformal = ({ onClick, selected }) => {
   return (
-      <Button 
+      <Button data-testid="Semiformal-1"
         className={selected ? "btn-conjuntos1 btn-top selected" : "btn-conjuntos1 btn-top"} 
         color="link" 
         onClick={onClick}

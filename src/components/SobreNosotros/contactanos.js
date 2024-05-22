@@ -41,7 +41,7 @@ function Contactanos() {
 
 function PaginaContactanos() {
   return (
-    <div className="PaginaContactanos">
+    <div className="PaginaContactanos" data-testid='contactanos-1'>
       <Top />
       <Contactanos />
     </div>

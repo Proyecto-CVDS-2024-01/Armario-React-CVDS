@@ -1,6 +1,6 @@
 import {render, screen, cleanup} from '@testing-library/react'
 import LogIn from '../../components/paginaPrincipal/LogIn'
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 
 
 afterEach( () => {

@@ -53,7 +53,7 @@ const Profile = () => {
     };
 
     return (
-        <div className="profile">
+        <div className="profile" data-testid='profilecanvas-1'>
             <Link to="/profile" className="profile-button"><h1>Mi Perfil</h1></Link>
             <h2>Mi Armario</h2>
             {Object.keys(inventory).map((category) => (

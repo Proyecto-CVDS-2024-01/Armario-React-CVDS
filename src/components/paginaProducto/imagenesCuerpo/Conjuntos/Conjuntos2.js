@@ -13,7 +13,7 @@ const Conjuntos2 = ({ onStyleSelect, selectedStyle }) => {
   };
 
   return (
-    <div className='clean-container' data-testid="tshirt-1">
+    <div className='clean-container' data-testid="Conjuntos2-1">
       <Semiformal 
         onClick={() => handleStyleClick("semiformal")} 
         selected={selectedStyle === "semiformal"} 

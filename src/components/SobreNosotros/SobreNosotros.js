@@ -21,7 +21,7 @@ const SobreNosotros = () => {
 
 function PaginaSobreNosotros () {
     return (
-        <div className='PaginaSobreNosotros'>
+        <div className='PaginaSobreNosotros' data-testid="sobrenosotros-1">
             <Taop />
             <SobreNosotros />
         </div>
