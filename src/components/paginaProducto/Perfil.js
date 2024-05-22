@@ -81,7 +81,7 @@ function Perfil(){
   );
   
 return (
-	<div>
+	<div data-testid="perfil-1">
 		<Navbar>
 			<NavbarBrand href="/">Tu armario virtual</NavbarBrand>
 			<NavbarToggler onClick={toggle} />

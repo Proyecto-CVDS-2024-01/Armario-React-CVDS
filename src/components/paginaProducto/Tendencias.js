@@ -54,7 +54,7 @@ export function Tendencias({ selectedStyle }) {
   );
 
   return (
-    <div>
+    <div data-testid="Tendencias-1">
       <div className='Screen'>
         <div className='Outfits'>
           <h1>TRENDING</h1>
