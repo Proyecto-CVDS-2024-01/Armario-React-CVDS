@@ -1,12 +1,13 @@
-/*
-import {render, screen} from '@testing-library/react'
-import About from '../../components/paginaPrincipal/About'
+import {render, screen, cleanup} from '@testing-library/react'
+import Conjuntos1 from '../../../../components/paginaProducto/imagenesCuerpo/Conjuntos/Conjuntos1';
 import '@testing-library/jest-dom'
-test('should render Aboutoo component', () => { 
-    render(<About/>);
-    const aboutElement = screen.getByTestId('about-1');
-    expect(aboutElement).toBeInTheDocument();
-    expect(aboutElement).toHaveTextContent('SOBRE NOSOTROS');
+
+afterEach(() => {
+    cleanup();
+});
+
+test('should render conjuntos1 component', () => { 
+    render(<Conjuntos1/>);
+    const conjuntos1Element = screen.getByTestId('Conjuntos1-1');
+    expect(conjuntos1Element).toBeInTheDocument();
 })
-FALTA
-*/ 
