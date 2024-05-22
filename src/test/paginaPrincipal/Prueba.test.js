@@ -12,4 +12,5 @@ test('should render Prueba component', () => {
     expect(PruebaElement).toBeInTheDocument();
     expect(PruebaElement).toHaveTextContent('Tu armario virtual está esperando para simplificar tu vida diaria. Organiza tu ropa, descubre nuevos looks y ahorra tiempo cada mañana.');
     expect(PruebaElement).toHaveTextContent('¡Qué esperas!');
+    expect(PruebaElement).toHaveTextContent('Pruebalo Ahora');
 });

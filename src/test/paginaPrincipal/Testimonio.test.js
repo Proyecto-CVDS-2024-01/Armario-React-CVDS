@@ -13,3 +13,9 @@ test('should render Testimonio component', () => {
     expect(testimonioElement).toHaveTextContent('Juan García');
 })
 
+test('should render an image in the Testimonios component', () => {
+    render(<Testimonio />);
+    const imgElement = screen.getByAltText('Imagen de moda');
+    expect(imgElement).toBeInTheDocument();
+    expect(imgElement).toHaveAttribute('src');
+});

@@ -6,8 +6,14 @@ afterEach( () => {
     cleanup();
 })
 
-test('should render images in the slider box componets', () => { 
-    render(<SliderBox/>);
-    const SliderBoxElement = screen.getByTestId('sliderbox-1');
-    expect(SliderBoxElement).toBeInTheDocument();
-})
+
+test('should render SliderBox component with UncontrolledCarousel containing images', () => {
+    const { container } = render(<SliderBox />);
+    const carousel = container.querySelector('.carousel'); 
+    // Verifica que el UncontrolledCarousel contiene imágenes
+    const images = container.querySelectorAll('img');
+    expect(images.length).toBeGreaterThan(0); 
+    images.forEach(img => {
+        expect(img).toHaveAttribute('src');
+    });
+});

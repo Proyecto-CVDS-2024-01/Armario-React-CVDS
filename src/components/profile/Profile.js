@@ -3,7 +3,7 @@ import '../../styleSheets/Profile.css';
 import React, { useState, useEffect } from 'react';
 import Top from '../paginaPrincipal/Top';
 import axios from 'axios';
-import LoadingScreen from '../LoadingScreen';
+//import LoadingScreen from '../LoadingScreen';
 const Profile = () => {
     const [selectedItems, setSelectedItems] = useState([]);
     const [selectedShirt, setSelectedShirt] = useState(null);
