@@ -55,7 +55,7 @@ export function AccessoriesSlider({ selectedStyle }) {
           key: item.key
         }))} />
       </div>
-      <h2>Tshirts</h2>
+      <h2>T-shirts</h2>
     </div>
   );
 }

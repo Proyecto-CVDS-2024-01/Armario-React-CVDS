@@ -1,12 +1,15 @@
-/*
-import {render, screen} from '@testing-library/react'
-import About from '../../components/paginaPrincipal/About'
+
+import {render, screen, cleanup} from '@testing-library/react'
+import Clean from '.../../../components/paginaProducto/imagenesCuerpo/Clean'
 import '@testing-library/jest-dom'
-test('should render Aboutoo component', () => { 
-    render(<About/>);
-    const aboutElement = screen.getByTestId('about-1');
-    expect(aboutElement).toBeInTheDocument();
-    expect(aboutElement).toHaveTextContent('SOBRE NOSOTROS');
+
+afterEach(() => {
+    cleanup();
+});
+
+test('should render Clean component', () => { 
+    render(<Clean/>);
+    const CleanElement = screen.getByTestId('clean-1');
+    expect(CleanElement).toBeInTheDocument();
+
 })
-FALTA
-*/ 
