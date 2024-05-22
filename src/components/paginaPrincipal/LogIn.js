@@ -44,7 +44,7 @@ export function LogIn(){
   }
 
   return (
-    <div>
+    <div data-testid="LogIn-1">
       <Button color='blue' onClick={toggle}>
         Inicio Sesion
       </Button>

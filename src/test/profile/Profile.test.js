@@ -1,12 +1,16 @@
-/*
-import {render, screen} from '@testing-library/react'
-import About from '../../components/paginaPrincipal/About'
+import {render, screen, cleanup} from '@testing-library/react'
+import Profile from '../../components/profile/Profile'
 import '@testing-library/jest-dom'
-test('should render Aboutoo component', () => { 
-    render(<About/>);
-    const aboutElement = screen.getByTestId('about-1');
-    expect(aboutElement).toBeInTheDocument();
-    expect(aboutElement).toHaveTextContent('SOBRE NOSOTROS');
+import { BrowserRouter } from 'react-router-dom';
+
+afterEach( () => {
+    cleanup();
 })
-FALTA
-*/ 
+
+test('should render Profile component', () => { 
+    render(<BrowserRouter><Profile/></BrowserRouter>);
+    const ProfileElement = screen.getByTestId('profile-1');
+    expect(ProfileElement).toBeInTheDocument();
+    expect(ProfileElement).toHaveTextContent('Tu armario virtual');
+
+})

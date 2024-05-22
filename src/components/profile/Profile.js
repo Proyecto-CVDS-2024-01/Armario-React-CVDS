@@ -114,7 +114,7 @@ const Profile = () => {
 
 const ProfilePage = () => {
     return (
-        <div className='ProfilePage'>
+        <div className='ProfilePage' data-testid="profile-1">
             <Top />
             <Profile />
         </div>
