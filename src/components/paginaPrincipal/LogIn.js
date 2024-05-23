@@ -11,6 +11,7 @@ export function LogIn(){
   const toggle = () => setModal(!modal);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [log, setLog] = useState(false);
   
   const handleSubmit =(e) =>{
     e.preventDefault();
@@ -22,7 +23,7 @@ export function LogIn(){
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:8080/login',
+      url: 'https://basecvds.azurewebsites.net/login',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -30,20 +31,36 @@ export function LogIn(){
     }; 
     axios.request(config)
     .then((response) => {
+      setLog(true);
       sessionStorage.setItem('authToken', response.data.token);
     })
     .catch((error) => {
       console.log(error);
     });
+  }
 
-    
+  const handleDelete =(e) =>{
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'https://basecvds.azurewebsites.net/login/logout',
+      headers: { 
+        'authToken': sessionStorage.getItem('authToken')
+      },
+    }; 
+    axios.request(config)
+    .then((response) => {
+      setLog(false);
+      sessionStorage.setItem('authToken', "");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
   return (
     <div data-testid="LogIn-1">
-      <Button color='blue' onClick={toggle}>
-        Inicio Sesion
-      </Button>
+      {!log ? <Button color='blue' onClick={toggle}>Inicio Sesion</Button>: <Button color='blue' onClick={handleDelete}>Cerrar Sesion</Button>}
       <Modal isOpen={modal} toggle={toggle} centered backdrop={false} size='sm'>
         <ModalHeader toggle={toggle}>Inicio Sesion</ModalHeader>
         <ModalBody>
@@ -55,7 +72,7 @@ export function LogIn(){
             <br/>
             <InputGroup>
               <InputGroupText>Password</InputGroupText>
-              <Input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+              <Input placeholder="password" onChange={(e) => setPassword(e.target.value)} type="password"/>
             </InputGroup>
             <br/>
             <Button color="primary">

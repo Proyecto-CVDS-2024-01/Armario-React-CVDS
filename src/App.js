@@ -16,6 +16,9 @@ import Perfil from './components/paginaProducto/Perfil';
 import Contactanos from './components/SobreNosotros/contactanos';
 import Profile from './components/profile/Profile';
 import Register from './components/paginaPrincipal/register';
+import Admin from './components/profile/Admin/Admin';
+import Crear from './components/profile/Admin/Crear';
+import Editar from './components/profile/Admin/Editar';
 function PaginaPrincipal() {
   return (
     <div className='App'>
@@ -53,6 +56,9 @@ function App() {
         <Route path='/contactanos' element={<Contactanos />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/admin' element={<Admin />} />
+        <Route path='/crear' element={<Crear />} />
+        <Route path='/editar/:id' element={<Editar />} />
       </Routes>
     </Router>
     
