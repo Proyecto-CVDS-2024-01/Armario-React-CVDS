@@ -15,4 +15,3 @@ test('should render Perfil component', () => {
     expect(PerfilElement).toBeInTheDocument();
     expect(PerfilElement).toHaveTextContent("CRUD")
 });
-W
