@@ -19,9 +19,10 @@ import Register from './components/paginaPrincipal/register';
 import Admin from './components/profile/Admin/Admin';
 import Crear from './components/profile/Admin/Crear';
 import Editar from './components/profile/Admin/Editar';
+
 function PaginaPrincipal() {
   return (
-    <div className='App'>
+    <div className='App' data-testid="App-1">
       <div className='Header'>
         <Top />
       </div>
