@@ -57,7 +57,7 @@ function App() {
         <Route path='/contactanos' element={<Contactanos />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin' element={<Admin/>} />
         <Route path='/crear' element={<Crear />} />
         <Route path='/editar/:id' element={<Editar />} />
       </Routes>

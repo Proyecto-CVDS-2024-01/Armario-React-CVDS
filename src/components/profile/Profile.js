@@ -102,7 +102,7 @@ const Profile = () => {
 
             // Comprobar si ya existen conjuntos creados por el usuario
             try {
-                const response = await axios.get('http://localhost:8080/user/client/conjuntos', {
+                const response = await axios.get('https://basecvds.azurewebsites.net/user/client/conjuntos', {
                     headers: {
                         'authToken': authToken
                     }
@@ -116,13 +116,12 @@ const Profile = () => {
         }
     };
 
-    if (!inventory) {
-        return <div> cargando... </div>;
+    if (!inventory || Object.keys(inventory).length === 0) {
+        return <div className="no-items">No hay prendas aún de este usuario.</div>;
     }
-
     return (
         <div className="profile">
-            <Link to="/profile" className="profile-button"><h1>Mi Perfil</h1></Link>
+            <Link to="/profile" className="profile-button"></Link>
             <h2>Mi Armario</h2>
             {Object.keys(inventory).map((category) => (
                 <div key={category}>
