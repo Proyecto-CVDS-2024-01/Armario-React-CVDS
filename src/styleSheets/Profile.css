@@ -40,8 +40,8 @@
 
 .item {
     flex: 0 0 auto;
-    width: 200px; /* Aumenta el tamaño de los ítems */
-    height: 200px; /* Aumenta el tamaño de los ítems */
+    width: 200px;
+    height: 200px;
     margin-right: 10px;
     display: flex;
     flex-direction: column;
@@ -51,6 +51,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Añadido sombra para dar profundidad */
 }
 
 .item:last-child {
@@ -59,15 +60,17 @@
 
 .item:hover {
     background-color: #ddd;
+    transform: scale(1.05); /* Añadido efecto de zoom al hacer hover */
 }
 
 .item img, .selected-item img {
-    width: 150px; /* Aumenta el tamaño de las imágenes */
-    height: 150px; /* Aumenta el tamaño de las imágenes */
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 50%; /* Agrega bordes redondeados a las imágenes */
-    border: 2px solid #ccc; /* Agrega un borde a las imágenes */
+    border-radius: 50%;
+    border: 2px solid #ccc;
 }
+
 .profile-button {
     display: inline-block;
     padding: 10px 20px;

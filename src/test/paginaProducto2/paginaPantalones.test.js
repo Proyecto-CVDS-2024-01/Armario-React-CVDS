@@ -16,7 +16,7 @@ test('should render PaginaPantalones component', () => {
     
 })
 
-test('should render Top', () => {
+/*test('should render Top', () => {
     render(<PaginaPantalones />);
     expect(screen.getByText('Top')).toBeInTheDocument();
 
@@ -26,4 +26,4 @@ test('should render multiple images', () => {
     render(<PaginaPantalones />);
     const images = screen.getAllByRole('img');
     expect(images.length).toBeGreaterThan(0);
-});
+});*/

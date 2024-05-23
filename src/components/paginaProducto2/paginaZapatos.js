@@ -3,7 +3,7 @@ import axios from 'axios';
 import "../../styleSheets/menuProductos.css";
 import Top from '../paginaPrincipal/Top';
 
-const Pantalones = () => {
+const Zapatos = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -60,13 +60,13 @@ const Pantalones = () => {
   );
 }
 
-function PaginaPantalones() {
+function PaginaZapatos() {
   return (
-    <div className="PaginaPantalones" data-testid="PaginaPantalones-1">
+    <div className="PaginaZapatos" data-testid="PaginaZapatos-1">
       <Top />
-      <Pantalones />
+      <Zapatos />
     </div>
   );
 }
 
-export default PaginaPantalones;
+export default PaginaZapatos;
