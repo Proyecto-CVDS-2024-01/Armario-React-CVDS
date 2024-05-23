@@ -5,7 +5,7 @@ import {Row,
     Label, Input, Button} from 'reactstrap';
 import { Navigate } from 'react-router-dom';
 
-function Editar(){
+function Crear(){
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -71,10 +71,10 @@ function Editar(){
                     </FormGroup>
                     </Col>
                 </Row>
-                <Button>Actualizar</Button>
+                <Button>Crear</Button>
             </form>
         </div>
     )
 }
 
-export default Editar;
+export default Crear;
