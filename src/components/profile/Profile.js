@@ -16,7 +16,7 @@ const Profile = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://basecvds.azurewebsites.net/user/client/prendas', {
+                const response = await axios.get('https://basecvds.azurewebsites.net/user/client/UsuarioPrendas', {
                     headers: {
                         'authToken': authToken
                     }
