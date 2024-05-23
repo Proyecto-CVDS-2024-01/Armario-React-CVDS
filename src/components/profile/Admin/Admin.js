@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {Modal, ModalBody, ModalHeader} from 'reactstrap';
+import {Navigate} from 'react-router-dom';
 import Crear from './Crear';
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -27,6 +28,26 @@ function Admin() {
                 console.log(error);
             });
         }, []);
+    const handleDelete = (id) =>{
+        const confirm = window.confirm('Are you sure to delete this user?');
+        if(confirm){
+            let config = {
+                method: 'delete',
+                maxBodyLength: Infinity,
+                url: 'https://basecvds.azurewebsites.net/user/admin/eliminarUsuario/' + id,
+                headers: { 
+                    'authToken': sessionStorage.getItem('authToken')
+                },
+            }; 
+            axios.request(config)
+                .then((response) => {
+                    Navigate("/admin");
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+    }
 
     return(
         <div className='Admin'>
@@ -49,7 +70,7 @@ function Admin() {
                             <td>{user.role}</td>
                             <td>
                                 <Link to={`/editar/${user.userId}`} className='btn btn-primary'>EDITAR</Link>
-                                <button className='btn btn-danger'>ELIMINAR</button>
+                                <button className='btn btn-danger' onClick={handleDelete}>ELIMINAR</button>
                             </td>
                         </tr>
                     )})}

@@ -1,7 +1,6 @@
 import {
 	OffcanvasBody,
 	} from 'reactstrap';
-import Admin from '../profile/Admin/Admin';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
