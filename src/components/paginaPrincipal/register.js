@@ -85,7 +85,7 @@ const validate = (form) => {
     errors.username = USERNAME_ERROR_MESSAGE;
   }
   if (!emailRegex.test(form.email))  {
-    errors.email = 'El correo electrónico no es válido';
+    errors.email = EMAIL_ERROR_MESSAGE;
   }
   if (form.password.length < PASSWORD_MIN_LENGTH) {
     errors.password = PASSWORD_LENGTH_ERROR_MESSAGE;
