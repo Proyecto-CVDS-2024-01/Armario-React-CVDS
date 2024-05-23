@@ -3,12 +3,13 @@ import '../../styleSheets/Profile.css';
 import React, { useState, useEffect } from 'react';
 import Top from '../paginaPrincipal/Top';
 import axios from 'axios';
-//import LoadingScreen from '../LoadingScreen';
+
 const Profile = () => {
     const [selectedItems, setSelectedItems] = useState([]);
     const [selectedShirt, setSelectedShirt] = useState(null);
     const [selectedPants, setSelectedPants] = useState(null);
     const [selectedJacket, setSelectedJacket] = useState(null);
+    const [selectedShoes, setSelectedShoes] = useState(null);
     const authToken = sessionStorage.getItem('authToken');
     const [inventory, setInventory] = useState(null);
 
@@ -35,6 +36,18 @@ const Profile = () => {
                             name: `pantalon ${index + 1}`,
                             imageUrl: `data:image/jpeg;base64,${prenda.imageUrlBase64}`,
                         })),
+                    chaquetas: listaPrendas
+                        .filter((prenda) => prenda.tipo === "CHAQUETA")
+                        .map((prenda, index) => ({
+                            name: `chaqueta ${index + 1}`,
+                            imageUrl: `data:image/jpeg;base64,${prenda.imageUrlBase64}`,
+                        })),
+                    zapatos: listaPrendas
+                        .filter((prenda) => prenda.tipo === "ZAPATOS")
+                        .map((prenda, index) => ({
+                            name: `zapato ${index + 1}`,
+                            imageUrl: `data:image/jpeg;base64,${prenda.imageUrlBase64}`,
+                        })),
                 });
             } catch (error) {
                 console.error(error);
@@ -54,17 +67,50 @@ const Profile = () => {
             case 'chaquetas':
                 setSelectedJacket(item);
                 break;
+            case 'zapatos':
+                setSelectedShoes(item);
+                break;
             default:
                 break;
         }
     };
 
-    const saveSelection = () => {
-        if (selectedShirt && selectedPants && selectedJacket) {
-            setSelectedItems([...selectedItems, [selectedShirt, selectedPants, selectedJacket]]);
+    const saveSelection = async () => {
+        if (selectedShirt && selectedPants && selectedJacket && selectedShoes) {
+            setSelectedItems([...selectedItems, [selectedShirt, selectedPants, selectedJacket, selectedShoes]]);
             setSelectedShirt(null);
             setSelectedPants(null);
             setSelectedJacket(null);
+            setSelectedShoes(null);
+
+            // Enviar el conjunto a la URL especificada
+            try {
+                const response = await axios.post('http://localhost:8080/user/client/conjuntos', {
+                    camisa: selectedShirt,
+                    pantalon: selectedPants,
+                    chaqueta: selectedJacket,
+                    zapatos: selectedShoes
+                }, {
+                    headers: {
+                        'authToken': authToken
+                    }
+                });
+                console.log(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+
+            // Comprobar si ya existen conjuntos creados por el usuario
+            try {
+                const response = await axios.get('http://localhost:8080/user/client/conjuntos', {
+                    headers: {
+                        'authToken': authToken
+                    }
+                });
+                console.log(response.data);
+            } catch (error) {
+                console.error(error);
+            }
         } else {
             alert('Por favor, selecciona una prenda de cada categoría.');
         }

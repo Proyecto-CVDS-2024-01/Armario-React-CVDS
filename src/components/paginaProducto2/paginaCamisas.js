@@ -1,21 +1,60 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import "../../styleSheets/menuProductos.css";
 import Top from '../paginaPrincipal/Top';
-const products = [
-  { id: 1, name: 'Camisa 1', image: 'https://static.zara.net/assets/public/0b02/6670/78ea44a48f82/13d7e58e2ada/07545425250-a1/07545425250-a1.jpg?ts=1713972230787&w=352' },
-  { id: 2, name: 'Camisa 2', image: 'https://static.zara.net/assets/public/25fa/6f51/0f8e4c99b09a/d03e3579a738/07545373403-a2/07545373403-a2.jpg?ts=1713361382981&w=352' },
-  { id: 3, name: 'Camisa 3',  image: 'https://static.zara.net/assets/public/482f/955e/9be141839cc4/5f3aae22458e/07545424250-a1/07545424250-a1.jpg?ts=1713972232790&w=352' },
-  { id: 4, name: 'Camisa 4',  image: 'https://static.zara.net/assets/public/08b4/bd2c/76c74b9fb8d3/5724cdca65c5/03991403712-a1/03991403712-a1.jpg?ts=1711024246741&w=587' },
-];
 
 const Camisas = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/user/prendas')
+      .then(response => {
+        const filteredProducts = response.data.filter(product => product.tipo === 'CAMISA');
+        console.log('Products:', filteredProducts);
+        setProducts(filteredProducts);
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
+  }, []);
+
+  const handleButtonClick = (product) => {
+    axios.get(`http://localhost:8080/user/client/token`, {
+      headers: {
+        authToken: sessionStorage.getItem('authToken')
+      }
+    })
+      .then(response => {
+        // Perform POST request with the image data and the retrieved data
+        const imageData = response.data;
+        console.log('Image data:', imageData);
+        console.log('Product:', product);
+        axios.post('http://localhost:8080/user/client/UsuarioPrenda', { prenda: product, user: imageData }, {
+          headers: {
+            authToken: sessionStorage.getItem('authToken')
+          }
+        })
+          .then(response => {
+            console.log('POST request successful:', response);
+          })
+          .catch(error => {
+            console.error('Error performing POST request:', error);
+          });
+      })
+      .catch(error => {
+        console.error('Error performing GET request:', error);
+      });
+  };
+
   return (
     <div className="product-grid">
-      {products.map(product => (
+      {products.map((product, index) => (
         <div key={product.id} className="product-card">
-          <img className="product-image" src={product.image} alt={product.name} />
-          <div className="product-name">{product.name}</div>
-          <div className="product-price">{product.price}</div>
+          
+            <img className="product-image" src={`data:image/png;base64, ${product.imageUrlBase64}`} alt={product.name} />
+            <div className="product-number">{product.tipo} {index + 1}</div>
+            <div className="product-name">{product.categoria}</div>
+            <button className="product-button" onClick={() => handleButtonClick(product)}>AÑADIR</button>
         </div>
       ))}
     </div>
@@ -29,7 +68,6 @@ function PaginaCamisas() {
       <Camisas />
     </div>
   );
-    
 }
 
 export default PaginaCamisas;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../../styleSheets/Perfil.css'
 
 export function Tendencias({ selectedStyle }) {
   const [prendas, setPrendas] = useState([]);
