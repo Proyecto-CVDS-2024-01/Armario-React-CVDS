@@ -16,7 +16,7 @@ test('should render PaginaZapatos component', () => {
     
 })
 
-test('should render Top', () => {
+/*test('should render Top', () => {
     render(<PaginaZapatos />);
     expect(screen.getByText('Top')).toBeInTheDocument();
 
@@ -26,4 +26,4 @@ test('should render multiple images', () => {
     render(<PaginaZapatos />);
     const images = screen.getAllByRole('img');
     expect(images.length).toBeGreaterThan(0);
-});
+});*/

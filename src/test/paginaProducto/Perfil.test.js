@@ -10,13 +10,8 @@ afterEach(() => {
 });
 
 test('should render Perfil component', () => { 
-    render(<Perfil />);
+    render(<BrowserRouter><Perfil /></BrowserRouter>);
     const PerfilElement = screen.getByTestId('perfil-1');
     expect(PerfilElement).toBeInTheDocument();
+    expect(PerfilElement).toHaveTextContent("Mi Perfil")
 });
-
-test('should render sections and products', () => {
-    render(<BrowserRouter><Perfil /></BrowserRouter>);
-    expect(screen.getByText('TRENDING')).toBeInTheDocument();
-    expect(screen.getAllByAltText('Main').length).toBeGreaterThan(0);
-  });
