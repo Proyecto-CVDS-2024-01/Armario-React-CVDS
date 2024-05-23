@@ -26,7 +26,7 @@ function Perfil(){
 		});
 	  }, []);
 	return(
-		<div>
+		<div data-testid="perfil-1">
 			{user.role === "CLIENTE" ? 
 				<OffcanvasBody className='offcanvasBody'>
 					<div className="user-data">

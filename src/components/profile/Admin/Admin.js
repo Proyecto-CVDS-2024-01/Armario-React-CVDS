@@ -50,7 +50,7 @@ function Admin() {
     }
 
     return(
-        <div className='Admin'>
+        <div className='Admin' data-testid="Admin-1">
             <Link className='btn btn-success' to={"/crear"}>Agregar</Link>
             <br /><br />
             <table className='table'>

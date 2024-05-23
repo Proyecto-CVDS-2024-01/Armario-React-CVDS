@@ -36,7 +36,7 @@ function Crear(){
         });
     }
     return(
-        <div>
+        <div data-testid="Crear-1">
             <form onSubmit={handleSubmit}>
                 <Row>
                     <Col md={6}>

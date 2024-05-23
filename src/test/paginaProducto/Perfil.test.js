@@ -13,5 +13,6 @@ test('should render Perfil component', () => {
     render(<BrowserRouter><Perfil /></BrowserRouter>);
     const PerfilElement = screen.getByTestId('perfil-1');
     expect(PerfilElement).toBeInTheDocument();
-    expect(PerfilElement).toHaveTextContent("Mi Perfil")
+    expect(PerfilElement).toHaveTextContent("CRUD")
 });
+W

@@ -57,7 +57,7 @@ function Crear(){
                 });
         }
     return(
-        <div>
+        <div data-testid="Editar-1">
             <div>
                 <h3>Detail of User</h3>
                 <div>
