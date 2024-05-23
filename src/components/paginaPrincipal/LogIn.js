@@ -53,7 +53,7 @@ export function LogIn(){
             <br/>
             <InputGroup>
               <InputGroupText>Password</InputGroupText>
-              <Input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+              <Input placeholder="password" onChange={(e) => setPassword(e.target.value)} type="password"/>
             </InputGroup>
             <br/>
             <Button color="primary">

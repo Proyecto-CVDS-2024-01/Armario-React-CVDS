@@ -30,30 +30,32 @@ function Crear(){
                 console.log(error);
             });
         }, []);
-    const handleSubmit =(e) =>{
-        e.preventDefault();
-        let data = JSON.stringify({
-            "username": username,
-            "password": password,
-            "role": role,
-            "email": email
-        });
-        let config = {
-            method: 'put',
-            maxBodyLength: Infinity,
-            url: 'https://basecvds.azurewebsites.net/user/admin/actualizarUsuario/' + id,
-            headers: { 
-                'Content-Type': 'application/json',
-                'authToken': sessionStorage.getItem('authToken')
-            },
-            data : data
-        }; 
-        axios.request(config).then((response) => {
-            console.log(response)})
-        .catch((error) => {
-            console.log(error);
-        });
-    }
+        const handleSubmit =(e) =>{
+            e.preventDefault();
+            let data = JSON.stringify({
+                "username": username,
+                "password": password,
+                "role": role,
+                "email": email
+            });
+            let config = {
+                method: 'put',
+                maxBodyLength: Infinity,
+                url: 'https://basecvds.azurewebsites.net/user/admin/actualizarUsuario/' + id,
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'authToken': sessionStorage.getItem('authToken')
+                },
+                data : data
+            }; 
+            axios.request(config)
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
     return(
         <div>
             <div>
