@@ -35,8 +35,6 @@ export function LogIn(){
     .catch((error) => {
       console.log(error);
     });
-
-    
   }
 
   return (
