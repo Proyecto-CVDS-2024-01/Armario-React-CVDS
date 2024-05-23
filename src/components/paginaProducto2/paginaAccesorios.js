@@ -3,13 +3,13 @@ import axios from 'axios';
 import "../../styleSheets/menuProductos.css";
 import Top from '../paginaPrincipal/Top';
 
-const Camisas = () => {
+const Accesorios = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios.get('http://basecvds.azurewebsites.net/user/prendas')
       .then(response => {
-        const filteredProducts = response.data.filter(product => product.tipo === ' ');
+        const filteredProducts = response.data.filter(product => product.tipo === 'ACCESORIOS');
         console.log('Products:', filteredProducts);
         setProducts(filteredProducts);
       })
@@ -50,7 +50,7 @@ const Camisas = () => {
     <div className="product-grid">
       {products.map((product, index) => (
         <div key={product.id} className="product-card">
-          
+
             <img className="product-image" src={`data:image/png;base64, ${product.imageUrlBase64}`} alt={product.name} />
             <div className="product-number">{product.tipo} {index + 1}</div>
             <div className="product-name">{product.categoria}</div>
@@ -61,13 +61,13 @@ const Camisas = () => {
   );
 }
 
-function PaginaCamisas() {
+function PaginaAccesorios() {
   return (
-    <div className="PaginaCamisas" data-testid="PaginaCamisas-1">
+    <div className="PaginaAccesorios" data-testid="PaginaAccesorios-1">
       <Top />
-      <Camisas />
+      <Accesorios />
     </div>
   );
 }
 
-export default PaginaCamisas;
+export default PaginaAccesorios;
