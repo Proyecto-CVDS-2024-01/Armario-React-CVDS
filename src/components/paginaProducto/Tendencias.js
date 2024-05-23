@@ -6,7 +6,7 @@ export function Tendencias({ selectedStyle }) {
   const [prendas, setPrendas] = useState([]);
   const authToken = sessionStorage.getItem('authToken');
   useEffect(() => {
-    axios.get('http://localhost:8080/user/prendas')
+    axios.get('http://basecvds.azurewebsites.net/user/prendas')
       .then(response => {
         setPrendas(response.data);
         console.log('Datos obtenidos:', response.data);
@@ -17,14 +17,14 @@ export function Tendencias({ selectedStyle }) {
   }, []);
 
   const handleAdd = (prenda) => {
-    axios.get('http://localhost:8080/user/client/token', {
+    axios.get('http://basecvds.azurewebsites.net/user/client/token', {
       headers: {
       authToken: authToken
       }
     })
       .then(response => {
         const user = response.data;
-        axios.post('http://localhost:8080/user/client/UsuarioPrenda', {
+        axios.post('http://basecvds.azurewebsites.net/user/client/UsuarioPrenda', {
           prenda: prenda,
           user: user
         }, {

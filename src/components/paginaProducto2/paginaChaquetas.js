@@ -7,7 +7,7 @@ const Chaquetas = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/user/prendas')
+    axios.get('http://basecvds.azurewebsites.net/user/prendas')
       .then(response => {
         const filteredProducts = response.data.filter(product => product.tipo === 'CHAQUETA');
         console.log('Products:', filteredProducts);
@@ -19,7 +19,7 @@ const Chaquetas = () => {
   }, []);
 
   const handleButtonClick = (product) => {
-    axios.get(`http://localhost:8080/user/client/token`, {
+    axios.get(`http://basecvds.azurewebsites.net/user/client/token`, {
       headers: {
         authToken: sessionStorage.getItem('authToken')
       }
@@ -29,7 +29,7 @@ const Chaquetas = () => {
         const imageData = response.data;
         console.log('Image data:', imageData);
         console.log('Product:', product);
-        axios.post('http://localhost:8080/user/client/UsuarioPrenda', { prenda: product, user: imageData }, {
+        axios.post('http://basecvds.azurewebsites.net/user/client/UsuarioPrenda', { prenda: product, user: imageData }, {
           headers: {
             authToken: sessionStorage.getItem('authToken')
           }
