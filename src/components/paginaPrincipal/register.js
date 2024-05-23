@@ -71,13 +71,14 @@ const Register = () => {
     </div>
   );
 };
+
 const USERNAME_MIN_LENGTH = 5;
 const PASSWORD_MIN_LENGTH = 8;
 const USERNAME_ERROR_MESSAGE = 'El nombre de usuario debe tener al menos 5 caracteres';
 const EMAIL_ERROR_MESSAGE = 'El correo electrónico no es válido';
 const PASSWORD_LENGTH_ERROR_MESSAGE = 'La contraseña debe tener al menos 8 caracteres';
 const PASSWORD_MATCH_ERROR_MESSAGE = 'Las contraseñas no coinciden';
-const emailRegex = new RegExp(/\S+@\S+\.\S+/);  
+const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
 
 const validate = (form) => {
   let errors = {};
