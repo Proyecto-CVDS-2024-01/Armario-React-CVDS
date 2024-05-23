@@ -16,14 +16,9 @@ test('should render PaginaChaquetas component', () => {
     
 })
 
-/*test('should render Top', () => {
+test('should render Top', () => {
     render(<PaginaChaquetas />);
     expect(screen.getByText('Top')).toBeInTheDocument();
 
 });
 
-test('should render multiple images', () => {
-    render(<PaginaChaquetas />);
-    const images = screen.getAllByRole('img');
-    expect(images.length).toBeGreaterThan(0);
-});*/
