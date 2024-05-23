@@ -1,11 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {Modal, ModalBody, ModalHeader} from 'reactstrap';
-<<<<<<< HEAD
-import {Navigate} from 'react-router-dom';
-=======
-import {Navigation} from 'react-router-dom';
->>>>>>> 6389c20ecbe1dcb98b5969fad7c55fbe9ca89f76
 import Crear from './Crear';
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -45,11 +40,7 @@ function Admin() {
             }; 
             axios.request(config)
                 .then((response) => {
-<<<<<<< HEAD
                     console.log(response)
-=======
-                    Navigation(/admin)
->>>>>>> 6389c20ecbe1dcb98b5969fad7c55fbe9ca89f76
                 })
                 .catch((error) => {
                     console.log(error);
