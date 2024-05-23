@@ -35,7 +35,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="app">
+    <div className="app" data-testid="LoadingScreen-1">
       {loading ? <LoadingScreen /> : <div>Contenido de la aplicación</div>}
     </div>
   );
