@@ -19,7 +19,7 @@ function Crear(){
             "role": role
         });
     let config = {
-        method: 'get',
+        method: 'post',
         maxBodyLength: Infinity,
         url: 'https://basecvds.azurewebsites.net/user/admin/adicionarUsuario',
         headers: { 
