@@ -37,7 +37,9 @@ function Perfil(){
 					</div>
 					<p>Nombre: {user.username}</p>
 					<p>Email: {user.password}</p>
-					
+					<Link to="/profile" className="profile-button">
+				<h1>Mi Perfil</h1>
+			</Link>
 				</OffcanvasBody> : 
 				<div>
 				<Link to="/admin">
