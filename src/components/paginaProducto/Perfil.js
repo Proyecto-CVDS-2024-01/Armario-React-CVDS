@@ -1,6 +1,6 @@
 import {
 	OffcanvasBody,
-	} from 'reactstrap';
+} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -10,12 +10,12 @@ function Perfil(){
 	const [user, setUser] = useState([]);
 	useEffect(() => {
 		let config = {
-		  method: 'get',
-		  maxBodyLength: Infinity,
-		  url: 'https://basecvds.azurewebsites.net/user/client/userId',
-		  headers: { 
-			'authToken': sessionStorage.getItem('authToken')
-		  },
+			method: 'get',
+			maxBodyLength: Infinity,
+			url: 'https://basecvds.azurewebsites.net/user/client/userId',
+			headers: { 
+				'authToken': sessionStorage.getItem('authToken')
+			},
 		};
 		axios.request(config)
 		.then((response) => {
@@ -24,7 +24,8 @@ function Perfil(){
 		.catch((error) => {
 			console.log(error);
 		});
-	  }, []);
+	}, []);
+
 	return(
 		<div data-testid="perfil-1">
 			{user.role === "CLIENTE" ? 
@@ -34,12 +35,19 @@ function Perfil(){
 							<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 9.858 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664h10z"/>
 						</svg>
 					</div>
-						<p>Nombre: {user.username}</p>
-						<p>Email: {user.password}</p>
-					<Link to="/profile" className="profile-button">
-						<h1>Mi Perfil</h1>
-					</Link>
-			</OffcanvasBody> : <Link to={"/admin"}><h1>CRUD</h1></Link>}
+					<p>Nombre: {user.username}</p>
+					<p>Email: {user.password}</p>
+					
+				</OffcanvasBody> : 
+				<div>
+				<Link to="/admin">
+					<h1>CRUD</h1>
+				</Link>
+				<Link to="/profile" className="profile-button">
+				<h1>Mi Perfil</h1>
+			</Link>
+			</div>
+			}
 		</div>
 	);
 };

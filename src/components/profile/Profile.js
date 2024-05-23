@@ -16,7 +16,7 @@ const Profile = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/user/client/prendas', {
+                const response = await axios.get('https://basecvds.azurewebsites.net/user/client/prendas', {
                     headers: {
                         'authToken': authToken
                     }
@@ -85,7 +85,7 @@ const Profile = () => {
 
             // Enviar el conjunto a la URL especificada
             try {
-                const response = await axios.post('http://localhost:8080/user/client/conjuntos', {
+                const response = await axios.post('https://basecvds.azurewebsites.net/user/client/conjuntos', {
                     camisa: selectedShirt,
                     pantalon: selectedPants,
                     chaqueta: selectedJacket,
