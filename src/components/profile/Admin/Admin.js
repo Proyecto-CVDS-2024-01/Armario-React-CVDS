@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {Modal, ModalBody, ModalHeader} from 'reactstrap';
-import {location} from 'react-router-dom';
+import {Navigation} from 'react-router-dom';
 import Crear from './Crear';
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -41,7 +41,7 @@ function Admin() {
             }; 
             axios.request(config)
                 .then((response) => {
-                    location.reload()
+                    Navigation(/admin)
                 })
                 .catch((error) => {
                     console.log(error);
