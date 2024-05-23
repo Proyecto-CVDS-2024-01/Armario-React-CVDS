@@ -22,7 +22,7 @@ export function LogIn(){
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:8080/login',
+      url: 'https://basecvds.azurewebsites.net/login',
       headers: { 
         'Content-Type': 'application/json'
       },
