@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../../styleSheets/ProductPage.css';
+import '../../../styleSheets/Perfil.css';
 import { UncontrolledCarousel } from 'reactstrap';
 
 const items = [
