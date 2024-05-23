@@ -53,24 +53,18 @@ const Register = () => {
       <h2>Registro de usuario</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Nombre de usuario:
-          <input type="text" name="username" value={form.username} onChange={handleChange} required />
+          Nombre de usuario:<input type="text" name="username" value={form.username} onChange={handleChange} required />
           {errors.username && <p>{errors.username}</p>}
         </label>
         <label>
-          Correo electrónico:
-          <input type="email" name="email" value={form.email} onChange={handleChange} required />
+          Correo electrónico:<input type="email" name="email" value={form.email} onChange={handleChange} required />
           {errors.email && <p>{errors.email}</p>}
         </label>
         <label>
-          Contraseña:
-          <input type="password" name="password" value={form.password} onChange={handleChange} required />
-          {errors.password && <p>{errors.password}</p>}
+          Contraseña:<input type="password" name="password" value={form.password} onChange={handleChange} required />{errors.password && <p>{errors.password}</p>}
         </label>
         <label>
-          Confirmar contraseña:
-          <input type="password" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} required />
-          {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+          Confirmar contraseña:<input type="password" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} required /> {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
         </label>
         <button type="submit">Registrarse</button>
       </form>
@@ -78,20 +72,27 @@ const Register = () => {
   );
 };
 
-// Función de validación
+const USERNAME_MIN_LENGTH = 5;
+const PASSWORD_MIN_LENGTH = 8;
+const USERNAME_ERROR_MESSAGE = 'El nombre de usuario debe tener al menos 5 caracteres';
+const EMAIL_ERROR_MESSAGE = 'El correo electrónico no es válido';
+const PASSWORD_LENGTH_ERROR_MESSAGE = 'La contraseña debe tener al menos 8 caracteres';
+const PASSWORD_MATCH_ERROR_MESSAGE = 'Las contraseñas no coinciden';
+const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+
 const validate = (form) => {
   let errors = {};
-  if (form.username.length < 5) {
-    errors.username = 'El nombre de usuario debe tener al menos 5 caracteres';
+  if (form.username.length < USERNAME_MIN_LENGTH) {
+    errors.username = USERNAME_ERROR_MESSAGE;
   }
-  if (!/\S+@\S+\.\S+/.test(form.email)) {
-    errors.email = 'El correo electrónico no es válido';
+  if (!emailRegex.test(form.email))  {
+    errors.email = EMAIL_ERROR_MESSAGE;
   }
-  if (form.password.length < 8) {
-    errors.password = 'La contraseña debe tener al menos 8 caracteres';
+  if (form.password.length < PASSWORD_MIN_LENGTH) {
+    errors.password = PASSWORD_LENGTH_ERROR_MESSAGE;
   }
   if (form.password !== form.confirmPassword) {
-    errors.confirmPassword = 'Las contraseñas no coinciden';
+    errors.confirmPassword = PASSWORD_MATCH_ERROR_MESSAGE;
   }
   return errors;
 };
