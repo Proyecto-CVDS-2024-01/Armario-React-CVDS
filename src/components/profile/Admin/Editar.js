@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import  axios  from 'axios';
 import {Row, Col, FormGroup, ModalBody, ModalHeader,
     Label, Input, Modal, Button} from 'reactstrap';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 
 function Crear(){
     const [modal, setModal] = useState(false);
@@ -29,7 +29,7 @@ function Crear(){
             .catch((error) => {
                 console.log(error);
             });
-        }, []);
+        }, [id]);
         const handleSubmit =(e) =>{
             e.preventDefault();
             let data = JSON.stringify({
@@ -51,6 +51,7 @@ function Crear(){
             axios.request(config)
                 .then((response) => {
                     console.log(response);
+                    Navigate("/admin")
                 })
                 .catch((error) => {
                     console.log(error);
