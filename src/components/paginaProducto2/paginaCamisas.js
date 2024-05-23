@@ -9,7 +9,7 @@ const Camisas = () => {
   useEffect(() => {
     axios.get('https://basecvds.azurewebsites.net/user/prendas')
       .then(response => {
-        const filteredProducts = response.data.filter(product => product.tipo === ' ');
+        const filteredProducts = response.data.filter(product => product.tipo === 'CAMISA');
         console.log('Products:', filteredProducts);
         setProducts(filteredProducts);
       })
