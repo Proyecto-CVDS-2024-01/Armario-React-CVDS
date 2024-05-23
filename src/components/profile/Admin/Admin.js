@@ -14,7 +14,7 @@ function Admin() {
         let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'http://localhost:8080/user/admin/users',
+        url: 'https://basecvds.azurewebsites.net/user/admin/users',
         headers: { 
             'authToken': sessionStorage.getItem('authToken')
         },
