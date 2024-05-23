@@ -1,21 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import "../../styleSheets/menuProductos.css";
 import Top from '../paginaPrincipal/Top';
-const products = [
-  { id: 1, name: 'Chaqueta 1', image: 'https://static.zara.net/assets/public/d91d/4a54/23a64fcca76d/3695d1ee0795/08574500732-a1/08574500732-a1.jpg?ts=1713195155611&w=352' },
-  { id: 2, name: 'Chaqueta 2',  image: 'https://static.zara.net/assets/public/4c52/4fd3/788746f4b137/f4934aea8e79/08574500806-a1/08574500806-a1.jpg?ts=1713195216779&w=352' },
-  { id: 3, name: 'Chaqueta 3',image: 'https://static.zara.net/assets/public/4982/164d/203c420a944f/c2c4045c756d/03286412825-a1/03286412825-a1.jpg?ts=1713519710102&w=362' },
-  { id: 4, name: 'Chaqueta 4',  image: 'https://static.zara.net/assets/public/3f6d/7c48/229d4d6897ce/7f6178faa024/08574456614-a1/08574456614-a1.jpg?ts=1710849251955&w=352' },
-];
 
-function Chaquetas() {
+const Chaquetas = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/user/prendas')
+      .then(response => {
+        const filteredProducts = response.data.filter(product => product.tipo === 'CHAQUETA');
+        console.log('Products:', filteredProducts);
+        setProducts(filteredProducts);
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
+  }, []);
+
+  const handleButtonClick = (product) => {
+    axios.get(`http://localhost:8080/user/client/token`, {
+      headers: {
+        authToken: sessionStorage.getItem('authToken')
+      }
+    })
+      .then(response => {
+        // Perform POST request with the image data and the retrieved data
+        const imageData = response.data;
+        console.log('Image data:', imageData);
+        console.log('Product:', product);
+        axios.post('http://localhost:8080/user/client/UsuarioPrenda', { prenda: product, user: imageData }, {
+          headers: {
+            authToken: sessionStorage.getItem('authToken')
+          }
+        })
+          .then(response => {
+            console.log('POST request successful:', response);
+          })
+          .catch(error => {
+            console.error('Error performing POST request:', error);
+          });
+      })
+      .catch(error => {
+        console.error('Error performing GET request:', error);
+      });
+  };
+
   return (
     <div className="product-grid">
-      {products.map(product => (
+      {products.map((product, index) => (
         <div key={product.id} className="product-card">
-          <img className="product-image" src={product.image} alt={product.name} />
-          <div className="product-name">{product.name}</div>
-          <div className="product-price">{product.price}</div>
+          <img className="product-image" src={`data:image/png;base64, ${product.imageUrlBase64}`} alt={product.name} />
+          <div className="product-number">{product.tipo} {index + 1}</div>
+          <div className="product-name">{product.categoria}</div>
+          <button className="product-button" onClick={() => handleButtonClick(product)}>AÑADIR</button>
         </div>
       ))}
     </div>
@@ -24,7 +62,7 @@ function Chaquetas() {
 
 function PaginaChaquetas() {
   return (
-    <div className="PaginaChaquetas" data-testid='PaginaChaquetas-1'>
+    <div className="PaginaChaquetas" data-testid="PaginaChaquetas-1">
       <Top />
       <Chaquetas />
     </div>
